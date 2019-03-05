@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Case";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@section header{
+    <link href="~/Areas/GuanWang/Css/pagebar.css" rel="stylesheet" />
+}
+
+<div class="form-inline definewidth m20">
+     <button type="button" class="btn btn-success" onclick="btn_add_case()">新增项目</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号id</th>
+            <th>标题</th>
+            <th width="50%">描述</th>
+            <th>图片</th>
+            <th>类型</th>
+            <th>用户</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_vyw_case_type> list = ViewData["list"] as List<Model.guanwang_vyw_case_type>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.caseID</td>
+            <td>@item.title</td>
+            <td>@item.describe</td>
+            <td>
+                <img src="@item.image" style="width:100px;height:80px;" /></td>
+            <td>@item.name</td>
+            <td>@item.userName</td>
+            <td>@Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/CaseEdit/@item.caseID">编辑</a>
+                 <a href="javascript:;" onclick="btn_move_up(@item.caseID)">上移</a>
+                <a href="javascript:;" onclick="btn_move_down(@item.caseID)">下移</a>
+                 <a href="javascript:;" onclick="btn_delete(@item.caseID)">删除</a>
+            </td>
+        </tr>	
+    }
+</table>
+
+<div class="inline pull-right page page_nav">
+    @ViewBag.Count 条记录 @ViewBag.PageIndex/@ViewBag.PageCount 页 @Html.Raw(MyPageBar.PageSortManager((int)ViewBag.PageIndex,(int)ViewBag.PageCount,ViewBag.UrlParams))
+</div>
+
+@section footer{
+    <script type="text/javascript">
+        //新增项目
+        function btn_add_case() {
+            window.location = "CaseAdd";
+        }
+
+        //上移
+        function btn_move_up(id) {
+            $.post("/GuanWang/ManagerHome/CaseUp", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //下移
+        function btn_move_down(id) {
+            $.post("/GuanWang/ManagerHome/CaseDown", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("CaseDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}

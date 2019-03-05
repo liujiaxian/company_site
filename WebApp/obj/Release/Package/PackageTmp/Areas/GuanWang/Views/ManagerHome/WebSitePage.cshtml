@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "TemplateTitle";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+    <button type="button" class="btn btn-success" onclick="btn_add_banner('@Html.ViewContext.RouteData.Values["id"]')">新增页面</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>标题</th>
+            <th>添加时间</th>
+            <th>更新时间</th>
+            <th>管理操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_web> list = ViewData["list"] as List<Model.guanwang_web>;}
+    @if (list.Count > 0)
+    {
+        foreach (var item in list)
+        {
+        <tr>
+            <td>@item.webID</td>
+            <td>
+                @item.webName</td>
+            <td>
+                @Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@(item.updateTime == null ? null : Convert.ToDateTime(item.updateTime).ToString("yyyy-MM-dd HH:mm:ss"))</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/WebSitePageEdit/@item.webID">编辑</a>
+                <a href="javascript:;" onclick="btn_delete(@item.webID)">删除</a>
+            </td>
+        </tr>
+        }
+    }
+    else
+    {
+            <tr><td colspan="5">暂无数据！</td></tr>
+    }
+</table>
+
+@section footer{
+    <script type="text/javascript">
+        //新增页面
+        function btn_add_banner(id) {
+            window.location = "/guanwang/managerhome/websitepageadd/"+id;
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("WebSitePageDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}
+

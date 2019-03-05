@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Footer";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+    <button type="button" class="btn btn-success" onclick="btn_add_banner()">新增链接</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>url</th>
+            <th>状态</th>
+            <th>管理操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_footer> list = ViewData["list"] as List<Model.guanwang_footer>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.footerID</td>
+            <td>
+                @item.name</td>
+            <td>
+                @Server.UrlDecode(item.url)</td>
+            <td>@(item.isShow == true ? "显示" : "不显示")</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/FooterEdit/@item.footerID">编辑</a>
+                @if (item.type!=0)
+                {
+                    <a href="javascript:;" onclick="btn_update_status(@item.footerID)">状态</a>
+                <a href="javascript:;" onclick="btn_delete(@item.footerID)">删除</a>
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+@section footer{
+    <script type="text/javascript">
+        //新增轮播
+        function btn_add_banner() {
+            window.location = "FooterAdd";
+        }
+
+        //更新状态
+        function btn_update_status(id) {
+            $.post("FooterStatus", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status==0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("FooterDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}

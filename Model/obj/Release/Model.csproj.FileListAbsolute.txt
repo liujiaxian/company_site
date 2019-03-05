@@ -1,0 +1,9 @@
+E:\mycase\guanwang\guanwang\Model\bin\Release\Model.dll.config
+E:\mycase\guanwang\guanwang\Model\bin\Release\Model.dll
+E:\mycase\guanwang\guanwang\Model\bin\Release\Model.pdb
+E:\mycase\guanwang\guanwang\Model\bin\Release\EntityFramework.dll
+E:\mycase\guanwang\guanwang\Model\bin\Release\EntityFramework.xml
+E:\mycase\guanwang\guanwang\Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\mycase\guanwang\guanwang\Model\obj\Release\Model.dll
+E:\mycase\guanwang\guanwang\Model\obj\Release\Model.pdb
+E:\mycase\guanwang\guanwang\Model\obj\Release\Model.csprojResolveAssemblyReference.cache

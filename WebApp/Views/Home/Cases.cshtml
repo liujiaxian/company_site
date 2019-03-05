@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "项目案例";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@{Model.guanwang_title titlemodel = ViewData["model"] as Model.guanwang_title;}
+  <section id="portfolio">
+        <div class="container">
+            <div class="center">
+               <h2>@titlemodel.title1</h2>
+               <p class="lead">@titlemodel.describe1</p>
+            </div>
+        
+
+            <ul class="portfolio-filter text-center">
+                @{List<Model.guanwang_case_type> typelist = ViewData["typelist"] as List<Model.guanwang_case_type>;}
+                 <li><a class="btn btn-default active" href="#" data-filter="*">全部</a></li>
+                @foreach (var item in typelist)
+                {
+                    <li><a class="btn btn-default" href="#" data-filter=".type@(item.typeID)">@item.name</a></li>                        
+                }
+
+             @*   <li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>*@
+            </ul><!--/#portfolio-filter-->
+
+            <div class="row">
+                <div class="portfolio-items">
+                    @{List<Model.guanwang_case> list = ViewData["list"] as List<Model.guanwang_case>;}
+                    @foreach (var item in list)
+                    {
+                        <div class="portfolio-item type@(item.typeID) col-xs-12 col-sm-4 col-md-3">
+                        <div class="recent-work-wrap">
+                            <img class="img-responsive" src="@item.image" alt="" style="width:292.5px;height:221.89px;">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <h3><a href="#" onclick="window.open('@Server.UrlDecode(item.link)')">@item.title</a></h3>
+                                    <p>@item.describe</p>
+                                    <a class="preview" href="@item.image" rel="prettyPhoto"><i class="fa fa-eye"></i> 预览</a>
+                                </div> 
+                            </div>
+                        </div>
+                    </div><!--/.portfolio-item-->
+                    }
+                </div>
+            </div>
+        </div>
+    </section><!--/#portfolio-item-->

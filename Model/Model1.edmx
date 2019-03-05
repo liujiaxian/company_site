@@ -1,0 +1,1564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="qds11527190_dbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="qds11527190_dbModelStoreContainer">
+          <EntitySet Name="guanwang_banner_about" EntityType="qds11527190_dbModel.Store.guanwang_banner_about" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_banner_index" EntityType="qds11527190_dbModel.Store.guanwang_banner_index" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_blog" EntityType="qds11527190_dbModel.Store.guanwang_blog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_blog_type" EntityType="qds11527190_dbModel.Store.guanwang_blog_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_case" EntityType="qds11527190_dbModel.Store.guanwang_case" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_case_type" EntityType="qds11527190_dbModel.Store.guanwang_case_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_evaluation" EntityType="qds11527190_dbModel.Store.guanwang_evaluation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_feedback" EntityType="qds11527190_dbModel.Store.guanwang_feedback" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_footer" EntityType="qds11527190_dbModel.Store.guanwang_footer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_good" EntityType="qds11527190_dbModel.Store.guanwang_good" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_hot" EntityType="qds11527190_dbModel.Store.guanwang_hot" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_like" EntityType="qds11527190_dbModel.Store.guanwang_like" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_partner" EntityType="qds11527190_dbModel.Store.guanwang_partner" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_pricing" EntityType="qds11527190_dbModel.Store.guanwang_pricing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_product" EntityType="qds11527190_dbModel.Store.guanwang_product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_product_type" EntityType="qds11527190_dbModel.Store.guanwang_product_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_service" EntityType="qds11527190_dbModel.Store.guanwang_service" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_skill" EntityType="qds11527190_dbModel.Store.guanwang_skill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_template" EntityType="qds11527190_dbModel.Store.guanwang_template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_template_title" EntityType="qds11527190_dbModel.Store.guanwang_template_title" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_title" EntityType="qds11527190_dbModel.Store.guanwang_title" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_user" EntityType="qds11527190_dbModel.Store.guanwang_user" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_web" EntityType="qds11527190_dbModel.Store.guanwang_web" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_web_type" EntityType="qds11527190_dbModel.Store.guanwang_web_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_website" EntityType="qds11527190_dbModel.Store.guanwang_website" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="guanwang_vyw_blog_type_user" EntityType="qds11527190_dbModel.Store.guanwang_vyw_blog_type_user" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_blog_type_user">
+            <DefiningQuery>SELECT 
+      [guanwang_vyw_blog_type_user].[blogID] AS [blogID], 
+      [guanwang_vyw_blog_type_user].[title] AS [title], 
+      [guanwang_vyw_blog_type_user].[describe] AS [describe], 
+      [guanwang_vyw_blog_type_user].[image] AS [image], 
+      [guanwang_vyw_blog_type_user].[content] AS [content], 
+      [guanwang_vyw_blog_type_user].[typeID] AS [typeID], 
+      [guanwang_vyw_blog_type_user].[userID] AS [userID], 
+      [guanwang_vyw_blog_type_user].[addTime] AS [addTime], 
+      [guanwang_vyw_blog_type_user].[updateTime] AS [updateTime], 
+      [guanwang_vyw_blog_type_user].[name] AS [name], 
+      [guanwang_vyw_blog_type_user].[userName] AS [userName], 
+      [guanwang_vyw_blog_type_user].[isDelete] AS [isDelete], 
+      [guanwang_vyw_blog_type_user].[likeCount] AS [likeCount], 
+      [guanwang_vyw_blog_type_user].[position] AS [position], 
+      [guanwang_vyw_blog_type_user].[realName] AS [realName], 
+      [guanwang_vyw_blog_type_user].[userTags] AS [userTags], 
+      [guanwang_vyw_blog_type_user].[userImage] AS [userImage], 
+      [guanwang_vyw_blog_type_user].[userDescribe] AS [userDescribe], 
+      [guanwang_vyw_blog_type_user].[tags] AS [tags], 
+      [guanwang_vyw_blog_type_user].[userWeb] AS [userWeb], 
+      [guanwang_vyw_blog_type_user].[facebook] AS [facebook], 
+      [guanwang_vyw_blog_type_user].[twitter] AS [twitter], 
+      [guanwang_vyw_blog_type_user].[googlePlus] AS [googlePlus], 
+      [guanwang_vyw_blog_type_user].[address] AS [address], 
+      [guanwang_vyw_blog_type_user].[area] AS [area], 
+      [guanwang_vyw_blog_type_user].[phone] AS [phone], 
+      [guanwang_vyw_blog_type_user].[Expr1] AS [Expr1]
+      FROM [dbo].[guanwang_vyw_blog_type_user] AS [guanwang_vyw_blog_type_user]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="guanwang_vyw_case_type" EntityType="qds11527190_dbModel.Store.guanwang_vyw_case_type" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_case_type">
+            <DefiningQuery>SELECT 
+      [guanwang_vyw_case_type].[caseID] AS [caseID], 
+      [guanwang_vyw_case_type].[describe] AS [describe], 
+      [guanwang_vyw_case_type].[image] AS [image], 
+      [guanwang_vyw_case_type].[typeID] AS [typeID], 
+      [guanwang_vyw_case_type].[addTime] AS [addTime], 
+      [guanwang_vyw_case_type].[updateTime] AS [updateTime], 
+      [guanwang_vyw_case_type].[title] AS [title], 
+      [guanwang_vyw_case_type].[name] AS [name], 
+      [guanwang_vyw_case_type].[userID] AS [userID], 
+      [guanwang_vyw_case_type].[userName] AS [userName], 
+      [guanwang_vyw_case_type].[userEmail] AS [userEmail], 
+      [guanwang_vyw_case_type].[userRole] AS [userRole], 
+      [guanwang_vyw_case_type].[userStatus] AS [userStatus], 
+      [guanwang_vyw_case_type].[realName] AS [realName], 
+      [guanwang_vyw_case_type].[position] AS [position], 
+      [guanwang_vyw_case_type].[userTags] AS [userTags], 
+      [guanwang_vyw_case_type].[userDescribe] AS [userDescribe], 
+      [guanwang_vyw_case_type].[userWeb] AS [userWeb], 
+      [guanwang_vyw_case_type].[facebook] AS [facebook], 
+      [guanwang_vyw_case_type].[userImage] AS [userImage], 
+      [guanwang_vyw_case_type].[twitter] AS [twitter], 
+      [guanwang_vyw_case_type].[googlePlus] AS [googlePlus], 
+      [guanwang_vyw_case_type].[address] AS [address], 
+      [guanwang_vyw_case_type].[area] AS [area], 
+      [guanwang_vyw_case_type].[phone] AS [phone], 
+      [guanwang_vyw_case_type].[link] AS [link], 
+      [guanwang_vyw_case_type].[weight] AS [weight]
+      FROM [dbo].[guanwang_vyw_case_type] AS [guanwang_vyw_case_type]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="guanwang_vyw_product_type" EntityType="qds11527190_dbModel.Store.guanwang_vyw_product_type" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_product_type">
+            <DefiningQuery>SELECT 
+      [guanwang_vyw_product_type].[name] AS [name], 
+      [guanwang_vyw_product_type].[updateTime] AS [updateTime], 
+      [guanwang_vyw_product_type].[addTime] AS [addTime], 
+      [guanwang_vyw_product_type].[image] AS [image], 
+      [guanwang_vyw_product_type].[productID] AS [productID], 
+      [guanwang_vyw_product_type].[title] AS [title], 
+      [guanwang_vyw_product_type].[describe] AS [describe], 
+      [guanwang_vyw_product_type].[typeID] AS [typeID]
+      FROM [dbo].[guanwang_vyw_product_type] AS [guanwang_vyw_product_type]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="guanwang_vyw_template_title" EntityType="qds11527190_dbModel.Store.guanwang_vyw_template_title" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_template_title">
+            <DefiningQuery>SELECT 
+      [guanwang_vyw_template_title].[templateID] AS [templateID], 
+      [guanwang_vyw_template_title].[height] AS [height], 
+      [guanwang_vyw_template_title].[thumbnail] AS [thumbnail], 
+      [guanwang_vyw_template_title].[pID] AS [pID], 
+      [guanwang_vyw_template_title].[addTime] AS [addTime], 
+      [guanwang_vyw_template_title].[title] AS [title], 
+      [guanwang_vyw_template_title].[updateTime] AS [updateTime]
+      FROM [dbo].[guanwang_vyw_template_title] AS [guanwang_vyw_template_title]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="guanwang_vyw_web_type" EntityType="qds11527190_dbModel.Store.guanwang_vyw_web_type" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_web_type">
+            <DefiningQuery>SELECT 
+      [guanwang_vyw_web_type].[name] AS [name], 
+      [guanwang_vyw_web_type].[title] AS [title], 
+      [guanwang_vyw_web_type].[image] AS [image], 
+      [guanwang_vyw_web_type].[typeID] AS [typeID], 
+      [guanwang_vyw_web_type].[addTime] AS [addTime], 
+      [guanwang_vyw_web_type].[updateTime] AS [updateTime], 
+      [guanwang_vyw_web_type].[websiteID] AS [websiteID], 
+      [guanwang_vyw_web_type].[weight] AS [weight]
+      FROM [dbo].[guanwang_vyw_web_type] AS [guanwang_vyw_web_type]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="guanwang_banner_about">
+          <Key>
+            <PropertyRef Name="bannerID" />
+          </Key>
+          <Property Name="bannerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+          <Property Name="isShow" Type="bit" Nullable="false" />
+          <Property Name="weight" Type="int" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_banner_index">
+          <Key>
+            <PropertyRef Name="bannerID" />
+          </Key>
+          <Property Name="bannerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="bannerTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="bannerDescripe" Type="nvarchar" MaxLength="500" />
+          <Property Name="weight" Type="int" />
+          <Property Name="bannerImage" Type="nvarchar" MaxLength="1050" />
+          <Property Name="peopleImage" Type="nvarchar" MaxLength="1050" />
+          <Property Name="link" Type="nvarchar" MaxLength="1050" />
+          <Property Name="isShow" Type="bit" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_blog">
+          <Key>
+            <PropertyRef Name="blogID" />
+          </Key>
+          <Property Name="blogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="tags" Type="nvarchar" MaxLength="100" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="likeCount" Type="int" />
+          <Property Name="isDelete" Type="bit" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_blog_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="weight" Type="int" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_case">
+          <Key>
+            <PropertyRef Name="caseID" />
+          </Key>
+          <Property Name="caseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="link" Type="nvarchar" MaxLength="1050" />
+          <Property Name="typeID" Type="int" />
+          <Property Name="userID" Type="int" />
+          <Property Name="weight" Type="int" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_case_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_evaluation">
+          <Key>
+            <PropertyRef Name="evaluationID" />
+          </Key>
+          <Property Name="evaluationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="isRecommend" Type="bit" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_feedback">
+          <Key>
+            <PropertyRef Name="feedbackID" />
+          </Key>
+          <Property Name="feedbackID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="company" Type="nvarchar" MaxLength="100" />
+          <Property Name="subject" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="message" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_footer">
+          <Key>
+            <PropertyRef Name="footerID" />
+          </Key>
+          <Property Name="footerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="url" Type="nvarchar" MaxLength="1050" />
+          <Property Name="type" Type="int" />
+          <Property Name="isShow" Type="bit" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_good">
+          <Key>
+            <PropertyRef Name="goodID" />
+          </Key>
+          <Property Name="goodID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_hot">
+          <Key>
+            <PropertyRef Name="hotID" />
+          </Key>
+          <Property Name="hotID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="blogID" Type="int" />
+          <Property Name="ipAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_like">
+          <Key>
+            <PropertyRef Name="likeID" />
+          </Key>
+          <Property Name="likeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="navTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_partner">
+          <Key>
+            <PropertyRef Name="partnerID" />
+          </Key>
+          <Property Name="partnerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+          <Property Name="url" Type="nvarchar" MaxLength="1050" />
+          <Property Name="isShow" Type="bit" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_pricing">
+          <Key>
+            <PropertyRef Name="pricingID" />
+          </Key>
+          <Property Name="pricingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="nvarchar" MaxLength="50" />
+          <Property Name="remark1" Type="nvarchar" MaxLength="50" />
+          <Property Name="remark2" Type="nvarchar" MaxLength="50" />
+          <Property Name="remark3" Type="nvarchar" MaxLength="50" />
+          <Property Name="remark4" Type="nvarchar" MaxLength="50" />
+          <Property Name="remark5" Type="nvarchar" MaxLength="50" />
+          <Property Name="url" Type="nvarchar" MaxLength="100" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_product">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_product_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_service">
+          <Key>
+            <PropertyRef Name="serviceID" />
+          </Key>
+          <Property Name="serviceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="iconClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_skill">
+          <Key>
+            <PropertyRef Name="skillID" />
+          </Key>
+          <Property Name="skillID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="percent" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="colorClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_template">
+          <Key>
+            <PropertyRef Name="templateID" />
+          </Key>
+          <Property Name="templateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="height" Type="nvarchar" MaxLength="50" />
+          <Property Name="thumbnail" Type="nvarchar" Nullable="false" MaxLength="1050" />
+          <Property Name="pID" Type="int" Nullable="false" />
+          <Property Name="html" Type="nvarchar(max)" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_template_title">
+          <Key>
+            <PropertyRef Name="pID" />
+          </Key>
+          <Property Name="pID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_title">
+          <Key>
+            <PropertyRef Name="titleID" />
+          </Key>
+          <Property Name="titleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title1" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe1" Type="nvarchar" MaxLength="500" />
+          <Property Name="title2" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe2" Type="nvarchar" MaxLength="500" />
+          <Property Name="title3" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe3" Type="nvarchar" MaxLength="500" />
+          <Property Name="title4" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe4" Type="nvarchar" MaxLength="500" />
+          <Property Name="title5" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe5" Type="nvarchar" MaxLength="500" />
+          <Property Name="title6" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe6" Type="nvarchar" MaxLength="500" />
+          <Property Name="typeid" Type="int" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_user">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userPwd" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userRole" Type="int" Nullable="false" />
+          <Property Name="userStatus" Type="bit" Nullable="false" />
+          <Property Name="realName" Type="nvarchar" MaxLength="50" />
+          <Property Name="position" Type="nvarchar" MaxLength="100" />
+          <Property Name="userTags" Type="nvarchar" MaxLength="100" />
+          <Property Name="userDescribe" Type="nvarchar" MaxLength="1050" />
+          <Property Name="userImage" Type="nvarchar" MaxLength="1050" />
+          <Property Name="userWeb" Type="nvarchar" MaxLength="500" />
+          <Property Name="facebook" Type="nvarchar" MaxLength="1050" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="1050" />
+          <Property Name="googlePlus" Type="nvarchar" MaxLength="1050" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="area" Type="nvarchar" MaxLength="100" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="isDelete" Type="bit" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="loginTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_web">
+          <Key>
+            <PropertyRef Name="webID" />
+          </Key>
+          <Property Name="webID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="webName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="template" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="websiteID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_web_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="weight" Type="int" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="guanwang_website">
+          <Key>
+            <PropertyRef Name="websiteID" />
+          </Key>
+          <Property Name="websiteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_blog_type_user”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="guanwang_vyw_blog_type_user">
+          <Key>
+            <PropertyRef Name="blogID" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="describe" />
+            <PropertyRef Name="typeID" />
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="blogID" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="content" Type="nvarchar(max)" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="isDelete" Type="bit" />
+          <Property Name="likeCount" Type="int" />
+          <Property Name="position" Type="nvarchar" MaxLength="100" />
+          <Property Name="realName" Type="nvarchar" MaxLength="50" />
+          <Property Name="userTags" Type="nvarchar" MaxLength="100" />
+          <Property Name="userImage" Type="nvarchar" MaxLength="1050" />
+          <Property Name="userDescribe" Type="nvarchar" MaxLength="1050" />
+          <Property Name="tags" Type="nvarchar" MaxLength="100" />
+          <Property Name="userWeb" Type="nvarchar" MaxLength="500" />
+          <Property Name="facebook" Type="nvarchar" MaxLength="1050" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="1050" />
+          <Property Name="googlePlus" Type="nvarchar" MaxLength="1050" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="area" Type="nvarchar" MaxLength="100" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr1" Type="bit" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_case_type”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="guanwang_vyw_case_type">
+          <Key>
+            <PropertyRef Name="caseID" />
+            <PropertyRef Name="describe" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="userEmail" />
+            <PropertyRef Name="userRole" />
+            <PropertyRef Name="userStatus" />
+          </Key>
+          <Property Name="caseID" Type="int" Nullable="false" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="typeID" Type="int" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userID" Type="int" />
+          <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="userRole" Type="int" Nullable="false" />
+          <Property Name="userStatus" Type="bit" Nullable="false" />
+          <Property Name="realName" Type="nvarchar" MaxLength="50" />
+          <Property Name="position" Type="nvarchar" MaxLength="100" />
+          <Property Name="userTags" Type="nvarchar" MaxLength="100" />
+          <Property Name="userDescribe" Type="nvarchar" MaxLength="1050" />
+          <Property Name="userWeb" Type="nvarchar" MaxLength="500" />
+          <Property Name="facebook" Type="nvarchar" MaxLength="1050" />
+          <Property Name="userImage" Type="nvarchar" MaxLength="1050" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="1050" />
+          <Property Name="googlePlus" Type="nvarchar" MaxLength="1050" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="area" Type="nvarchar" MaxLength="100" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="link" Type="nvarchar" MaxLength="1050" />
+          <Property Name="weight" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_product_type”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="guanwang_vyw_product_type">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="productID" />
+            <PropertyRef Name="describe" />
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="updateTime" Type="datetime" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="image" Type="nvarchar" MaxLength="1050" />
+          <Property Name="productID" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_template_title”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="guanwang_vyw_template_title">
+          <Key>
+            <PropertyRef Name="templateID" />
+            <PropertyRef Name="thumbnail" />
+            <PropertyRef Name="pID" />
+          </Key>
+          <Property Name="templateID" Type="int" Nullable="false" />
+          <Property Name="height" Type="nvarchar" MaxLength="50" />
+          <Property Name="thumbnail" Type="nvarchar" Nullable="false" MaxLength="1050" />
+          <Property Name="pID" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="updateTime" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_web_type”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="guanwang_vyw_web_type">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="image" />
+            <PropertyRef Name="typeID" />
+            <PropertyRef Name="websiteID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+          <Property Name="typeID" Type="int" Nullable="false" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+          <Property Name="websiteID" Type="int" Nullable="false" />
+          <Property Name="weight" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="qds11527190_dbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="qds11527190_dbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="guanwang_banner_about" EntityType="qds11527190_dbModel.guanwang_banner_about" />
+          <EntitySet Name="guanwang_banner_index" EntityType="qds11527190_dbModel.guanwang_banner_index" />
+          <EntitySet Name="guanwang_blog" EntityType="qds11527190_dbModel.guanwang_blog" />
+          <EntitySet Name="guanwang_blog_type" EntityType="qds11527190_dbModel.guanwang_blog_type" />
+          <EntitySet Name="guanwang_case" EntityType="qds11527190_dbModel.guanwang_case" />
+          <EntitySet Name="guanwang_case_type" EntityType="qds11527190_dbModel.guanwang_case_type" />
+          <EntitySet Name="guanwang_evaluation" EntityType="qds11527190_dbModel.guanwang_evaluation" />
+          <EntitySet Name="guanwang_feedback" EntityType="qds11527190_dbModel.guanwang_feedback" />
+          <EntitySet Name="guanwang_footer" EntityType="qds11527190_dbModel.guanwang_footer" />
+          <EntitySet Name="guanwang_good" EntityType="qds11527190_dbModel.guanwang_good" />
+          <EntitySet Name="guanwang_hot" EntityType="qds11527190_dbModel.guanwang_hot" />
+          <EntitySet Name="guanwang_like" EntityType="qds11527190_dbModel.guanwang_like" />
+          <EntitySet Name="guanwang_partner" EntityType="qds11527190_dbModel.guanwang_partner" />
+          <EntitySet Name="guanwang_pricing" EntityType="qds11527190_dbModel.guanwang_pricing" />
+          <EntitySet Name="guanwang_product" EntityType="qds11527190_dbModel.guanwang_product" />
+          <EntitySet Name="guanwang_product_type" EntityType="qds11527190_dbModel.guanwang_product_type" />
+          <EntitySet Name="guanwang_service" EntityType="qds11527190_dbModel.guanwang_service" />
+          <EntitySet Name="guanwang_skill" EntityType="qds11527190_dbModel.guanwang_skill" />
+          <EntitySet Name="guanwang_template" EntityType="qds11527190_dbModel.guanwang_template" />
+          <EntitySet Name="guanwang_template_title" EntityType="qds11527190_dbModel.guanwang_template_title" />
+          <EntitySet Name="guanwang_title" EntityType="qds11527190_dbModel.guanwang_title" />
+          <EntitySet Name="guanwang_user" EntityType="qds11527190_dbModel.guanwang_user" />
+          <EntitySet Name="guanwang_web" EntityType="qds11527190_dbModel.guanwang_web" />
+          <EntitySet Name="guanwang_web_type" EntityType="qds11527190_dbModel.guanwang_web_type" />
+          <EntitySet Name="guanwang_website" EntityType="qds11527190_dbModel.guanwang_website" />
+          <EntitySet Name="guanwang_vyw_blog_type_user" EntityType="qds11527190_dbModel.guanwang_vyw_blog_type_user" />
+          <EntitySet Name="guanwang_vyw_case_type" EntityType="qds11527190_dbModel.guanwang_vyw_case_type" />
+          <EntitySet Name="guanwang_vyw_product_type" EntityType="qds11527190_dbModel.guanwang_vyw_product_type" />
+          <EntitySet Name="guanwang_vyw_template_title" EntityType="qds11527190_dbModel.guanwang_vyw_template_title" />
+          <EntitySet Name="guanwang_vyw_web_type" EntityType="qds11527190_dbModel.guanwang_vyw_web_type" />
+        </EntityContainer>
+        <EntityType Name="guanwang_banner_about">
+          <Key>
+            <PropertyRef Name="bannerID" />
+          </Key>
+          <Property Type="Int32" Name="bannerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="image" Nullable="false" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isShow" Nullable="false" />
+          <Property Type="Int32" Name="weight" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_banner_index">
+          <Key>
+            <PropertyRef Name="bannerID" />
+          </Key>
+          <Property Type="Int32" Name="bannerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="bannerTitle" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="bannerDescripe" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="weight" />
+          <Property Type="String" Name="bannerImage" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="peopleImage" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="link" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isShow" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_blog">
+          <Key>
+            <PropertyRef Name="blogID" />
+          </Key>
+          <Property Type="Int32" Name="blogID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="content" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="tags" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" Nullable="false" />
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="Int32" Name="likeCount" />
+          <Property Type="Boolean" Name="isDelete" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_blog_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Type="Int32" Name="typeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="weight" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_case">
+          <Key>
+            <PropertyRef Name="caseID" />
+          </Key>
+          <Property Type="Int32" Name="caseID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="link" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" />
+          <Property Type="Int32" Name="userID" />
+          <Property Type="Int32" Name="weight" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_case_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Type="Int32" Name="typeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_evaluation">
+          <Key>
+            <PropertyRef Name="evaluationID" />
+          </Key>
+          <Property Type="Int32" Name="evaluationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isRecommend" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_feedback">
+          <Key>
+            <PropertyRef Name="feedbackID" />
+          </Key>
+          <Property Type="Int32" Name="feedbackID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="company" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="subject" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="message" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPAddress" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_footer">
+          <Key>
+            <PropertyRef Name="footerID" />
+          </Key>
+          <Property Type="Int32" Name="footerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="type" />
+          <Property Type="Boolean" Name="isShow" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_good">
+          <Key>
+            <PropertyRef Name="goodID" />
+          </Key>
+          <Property Type="Int32" Name="goodID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_hot">
+          <Key>
+            <PropertyRef Name="hotID" />
+          </Key>
+          <Property Type="Int32" Name="hotID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="blogID" />
+          <Property Type="String" Name="ipAddress" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_like">
+          <Key>
+            <PropertyRef Name="likeID" />
+          </Key>
+          <Property Type="Int32" Name="likeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="navTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_partner">
+          <Key>
+            <PropertyRef Name="partnerID" />
+          </Key>
+          <Property Type="Int32" Name="partnerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" Nullable="false" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isShow" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_pricing">
+          <Key>
+            <PropertyRef Name="pricingID" />
+          </Key>
+          <Property Type="Int32" Name="pricingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="price" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark4" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark5" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="url" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_product">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Type="Int32" Name="productID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_product_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Type="Int32" Name="typeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_service">
+          <Key>
+            <PropertyRef Name="serviceID" />
+          </Key>
+          <Property Type="Int32" Name="serviceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="iconClass" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_skill">
+          <Key>
+            <PropertyRef Name="skillID" />
+          </Key>
+          <Property Type="Int32" Name="skillID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="percent" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="colorClass" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_template">
+          <Key>
+            <PropertyRef Name="templateID" />
+          </Key>
+          <Property Type="Int32" Name="templateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="height" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="thumbnail" Nullable="false" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="pID" Nullable="false" />
+          <Property Type="String" Name="html" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_template_title">
+          <Key>
+            <PropertyRef Name="pID" />
+          </Key>
+          <Property Type="Int32" Name="pID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_title">
+          <Key>
+            <PropertyRef Name="titleID" />
+          </Key>
+          <Property Type="Int32" Name="titleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe1" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe2" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title3" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe3" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title4" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe4" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title5" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe5" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title6" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe6" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeid" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_user">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Type="Int32" Name="userID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userPwd" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="userRole" Nullable="false" />
+          <Property Type="Boolean" Name="userStatus" Nullable="false" />
+          <Property Type="String" Name="realName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="position" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userTags" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userDescribe" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userImage" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userWeb" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="facebook" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="twitter" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="googlePlus" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="area" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isDelete" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="loginTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_web">
+          <Key>
+            <PropertyRef Name="webID" />
+          </Key>
+          <Property Type="Int32" Name="webID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="webName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="template" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="websiteID" Nullable="false" />
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_web_type">
+          <Key>
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Type="Int32" Name="typeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="weight" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_website">
+          <Key>
+            <PropertyRef Name="websiteID" />
+          </Key>
+          <Property Type="Int32" Name="websiteID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" Nullable="false" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" Nullable="false" />
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_vyw_blog_type_user">
+          <Key>
+            <PropertyRef Name="blogID" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="describe" />
+            <PropertyRef Name="typeID" />
+            <PropertyRef Name="userID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Type="Int32" Name="blogID" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="content" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" Nullable="false" />
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isDelete" />
+          <Property Type="Int32" Name="likeCount" />
+          <Property Type="String" Name="position" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="realName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userTags" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userImage" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userDescribe" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="tags" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userWeb" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="facebook" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="twitter" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="googlePlus" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="area" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Expr1" />
+        </EntityType>
+        <EntityType Name="guanwang_vyw_case_type">
+          <Key>
+            <PropertyRef Name="caseID" />
+            <PropertyRef Name="describe" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="userEmail" />
+            <PropertyRef Name="userRole" />
+            <PropertyRef Name="userStatus" />
+          </Key>
+          <Property Type="Int32" Name="caseID" Nullable="false" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="userID" />
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userEmail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="userRole" Nullable="false" />
+          <Property Type="Boolean" Name="userStatus" Nullable="false" />
+          <Property Type="String" Name="realName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="position" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userTags" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userDescribe" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userWeb" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="facebook" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="userImage" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="twitter" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="googlePlus" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="area" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="link" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="weight" />
+        </EntityType>
+        <EntityType Name="guanwang_vyw_product_type">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="productID" />
+            <PropertyRef Name="describe" />
+            <PropertyRef Name="typeID" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="String" Name="image" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="productID" Nullable="false" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="guanwang_vyw_template_title">
+          <Key>
+            <PropertyRef Name="templateID" />
+            <PropertyRef Name="thumbnail" />
+            <PropertyRef Name="pID" />
+          </Key>
+          <Property Type="Int32" Name="templateID" Nullable="false" />
+          <Property Type="String" Name="height" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="thumbnail" Nullable="false" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="pID" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="String" Name="title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="guanwang_vyw_web_type">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="image" />
+            <PropertyRef Name="typeID" />
+            <PropertyRef Name="websiteID" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="image" Nullable="false" MaxLength="1050" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="typeID" Nullable="false" />
+          <Property Type="DateTime" Name="addTime" Precision="3" />
+          <Property Type="DateTime" Name="updateTime" Precision="3" />
+          <Property Type="Int32" Name="websiteID" Nullable="false" />
+          <Property Type="Int32" Name="weight" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="qds11527190_dbModelStoreContainer" CdmEntityContainer="qds11527190_dbEntities">
+          <EntitySetMapping Name="guanwang_banner_about">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_banner_about">
+              <MappingFragment StoreEntitySet="guanwang_banner_about">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="isShow" ColumnName="isShow" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="bannerID" ColumnName="bannerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_banner_index">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_banner_index">
+              <MappingFragment StoreEntitySet="guanwang_banner_index">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="isShow" ColumnName="isShow" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="peopleImage" ColumnName="peopleImage" />
+                <ScalarProperty Name="bannerImage" ColumnName="bannerImage" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="bannerDescripe" ColumnName="bannerDescripe" />
+                <ScalarProperty Name="bannerTitle" ColumnName="bannerTitle" />
+                <ScalarProperty Name="bannerID" ColumnName="bannerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_blog">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_blog">
+              <MappingFragment StoreEntitySet="guanwang_blog">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="likeCount" ColumnName="likeCount" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="tags" ColumnName="tags" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="blogID" ColumnName="blogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_blog_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_blog_type">
+              <MappingFragment StoreEntitySet="guanwang_blog_type">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_case">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_case">
+              <MappingFragment StoreEntitySet="guanwang_case">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="caseID" ColumnName="caseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_case_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_case_type">
+              <MappingFragment StoreEntitySet="guanwang_case_type">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_evaluation">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_evaluation">
+              <MappingFragment StoreEntitySet="guanwang_evaluation">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="isRecommend" ColumnName="isRecommend" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="evaluationID" ColumnName="evaluationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_feedback">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_feedback">
+              <MappingFragment StoreEntitySet="guanwang_feedback">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="feedbackID" ColumnName="feedbackID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_footer">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_footer">
+              <MappingFragment StoreEntitySet="guanwang_footer">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="isShow" ColumnName="isShow" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="footerID" ColumnName="footerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_good">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_good">
+              <MappingFragment StoreEntitySet="guanwang_good">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="goodID" ColumnName="goodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_hot">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_hot">
+              <MappingFragment StoreEntitySet="guanwang_hot">
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="ipAddress" ColumnName="ipAddress" />
+                <ScalarProperty Name="blogID" ColumnName="blogID" />
+                <ScalarProperty Name="hotID" ColumnName="hotID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_like">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_like">
+              <MappingFragment StoreEntitySet="guanwang_like">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="navTitle" ColumnName="navTitle" />
+                <ScalarProperty Name="likeID" ColumnName="likeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_partner">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_partner">
+              <MappingFragment StoreEntitySet="guanwang_partner">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="isShow" ColumnName="isShow" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="partnerID" ColumnName="partnerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_pricing">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_pricing">
+              <MappingFragment StoreEntitySet="guanwang_pricing">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="remark5" ColumnName="remark5" />
+                <ScalarProperty Name="remark4" ColumnName="remark4" />
+                <ScalarProperty Name="remark3" ColumnName="remark3" />
+                <ScalarProperty Name="remark2" ColumnName="remark2" />
+                <ScalarProperty Name="remark1" ColumnName="remark1" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="pricingID" ColumnName="pricingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_product">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_product">
+              <MappingFragment StoreEntitySet="guanwang_product">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_product_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_product_type">
+              <MappingFragment StoreEntitySet="guanwang_product_type">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_service">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_service">
+              <MappingFragment StoreEntitySet="guanwang_service">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="iconClass" ColumnName="iconClass" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_skill">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_skill">
+              <MappingFragment StoreEntitySet="guanwang_skill">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="colorClass" ColumnName="colorClass" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="percent" ColumnName="percent" />
+                <ScalarProperty Name="skillID" ColumnName="skillID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_template">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_template">
+              <MappingFragment StoreEntitySet="guanwang_template">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="html" ColumnName="html" />
+                <ScalarProperty Name="pID" ColumnName="pID" />
+                <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="templateID" ColumnName="templateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_template_title">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_template_title">
+              <MappingFragment StoreEntitySet="guanwang_template_title">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="pID" ColumnName="pID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_title">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_title">
+              <MappingFragment StoreEntitySet="guanwang_title">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="typeid" ColumnName="typeid" />
+                <ScalarProperty Name="describe6" ColumnName="describe6" />
+                <ScalarProperty Name="title6" ColumnName="title6" />
+                <ScalarProperty Name="describe5" ColumnName="describe5" />
+                <ScalarProperty Name="title5" ColumnName="title5" />
+                <ScalarProperty Name="describe4" ColumnName="describe4" />
+                <ScalarProperty Name="title4" ColumnName="title4" />
+                <ScalarProperty Name="describe3" ColumnName="describe3" />
+                <ScalarProperty Name="title3" ColumnName="title3" />
+                <ScalarProperty Name="describe2" ColumnName="describe2" />
+                <ScalarProperty Name="title2" ColumnName="title2" />
+                <ScalarProperty Name="describe1" ColumnName="describe1" />
+                <ScalarProperty Name="title1" ColumnName="title1" />
+                <ScalarProperty Name="titleID" ColumnName="titleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_user">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_user">
+              <MappingFragment StoreEntitySet="guanwang_user">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="loginTime" ColumnName="loginTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="googlePlus" ColumnName="googlePlus" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="userWeb" ColumnName="userWeb" />
+                <ScalarProperty Name="userImage" ColumnName="userImage" />
+                <ScalarProperty Name="userDescribe" ColumnName="userDescribe" />
+                <ScalarProperty Name="userTags" ColumnName="userTags" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="realName" ColumnName="realName" />
+                <ScalarProperty Name="userStatus" ColumnName="userStatus" />
+                <ScalarProperty Name="userRole" ColumnName="userRole" />
+                <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+                <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_web">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_web">
+              <MappingFragment StoreEntitySet="guanwang_web">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="websiteID" ColumnName="websiteID" />
+                <ScalarProperty Name="template" ColumnName="template" />
+                <ScalarProperty Name="webName" ColumnName="webName" />
+                <ScalarProperty Name="webID" ColumnName="webID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_web_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_web_type">
+              <MappingFragment StoreEntitySet="guanwang_web_type">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_website">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_website">
+              <MappingFragment StoreEntitySet="guanwang_website">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="websiteID" ColumnName="websiteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_vyw_blog_type_user">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_blog_type_user">
+              <MappingFragment StoreEntitySet="guanwang_vyw_blog_type_user">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="googlePlus" ColumnName="googlePlus" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="userWeb" ColumnName="userWeb" />
+                <ScalarProperty Name="tags" ColumnName="tags" />
+                <ScalarProperty Name="userDescribe" ColumnName="userDescribe" />
+                <ScalarProperty Name="userImage" ColumnName="userImage" />
+                <ScalarProperty Name="userTags" ColumnName="userTags" />
+                <ScalarProperty Name="realName" ColumnName="realName" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="likeCount" ColumnName="likeCount" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="blogID" ColumnName="blogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_vyw_case_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_case_type">
+              <MappingFragment StoreEntitySet="guanwang_vyw_case_type">
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="googlePlus" ColumnName="googlePlus" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="userImage" ColumnName="userImage" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="userWeb" ColumnName="userWeb" />
+                <ScalarProperty Name="userDescribe" ColumnName="userDescribe" />
+                <ScalarProperty Name="userTags" ColumnName="userTags" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="realName" ColumnName="realName" />
+                <ScalarProperty Name="userStatus" ColumnName="userStatus" />
+                <ScalarProperty Name="userRole" ColumnName="userRole" />
+                <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="caseID" ColumnName="caseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_vyw_product_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_product_type">
+              <MappingFragment StoreEntitySet="guanwang_vyw_product_type">
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_vyw_template_title">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_template_title">
+              <MappingFragment StoreEntitySet="guanwang_vyw_template_title">
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="pID" ColumnName="pID" />
+                <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="templateID" ColumnName="templateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guanwang_vyw_web_type">
+            <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_web_type">
+              <MappingFragment StoreEntitySet="guanwang_vyw_web_type">
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="websiteID" ColumnName="websiteID" />
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="addTime" ColumnName="addTime" />
+                <ScalarProperty Name="typeID" ColumnName="typeID" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

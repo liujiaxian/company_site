@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="qds11527190_dbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="qds11527190_dbModelStoreContainer">
+    <EntitySet Name="guanwang_banner_about" EntityType="qds11527190_dbModel.Store.guanwang_banner_about" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_banner_index" EntityType="qds11527190_dbModel.Store.guanwang_banner_index" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_blog" EntityType="qds11527190_dbModel.Store.guanwang_blog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_blog_type" EntityType="qds11527190_dbModel.Store.guanwang_blog_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_case" EntityType="qds11527190_dbModel.Store.guanwang_case" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_case_type" EntityType="qds11527190_dbModel.Store.guanwang_case_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_evaluation" EntityType="qds11527190_dbModel.Store.guanwang_evaluation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_feedback" EntityType="qds11527190_dbModel.Store.guanwang_feedback" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_footer" EntityType="qds11527190_dbModel.Store.guanwang_footer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_good" EntityType="qds11527190_dbModel.Store.guanwang_good" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_hot" EntityType="qds11527190_dbModel.Store.guanwang_hot" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_like" EntityType="qds11527190_dbModel.Store.guanwang_like" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_partner" EntityType="qds11527190_dbModel.Store.guanwang_partner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_pricing" EntityType="qds11527190_dbModel.Store.guanwang_pricing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_product" EntityType="qds11527190_dbModel.Store.guanwang_product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_product_type" EntityType="qds11527190_dbModel.Store.guanwang_product_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_service" EntityType="qds11527190_dbModel.Store.guanwang_service" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_skill" EntityType="qds11527190_dbModel.Store.guanwang_skill" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_template" EntityType="qds11527190_dbModel.Store.guanwang_template" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_template_title" EntityType="qds11527190_dbModel.Store.guanwang_template_title" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_title" EntityType="qds11527190_dbModel.Store.guanwang_title" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_user" EntityType="qds11527190_dbModel.Store.guanwang_user" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_web" EntityType="qds11527190_dbModel.Store.guanwang_web" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_web_type" EntityType="qds11527190_dbModel.Store.guanwang_web_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_website" EntityType="qds11527190_dbModel.Store.guanwang_website" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="guanwang_vyw_blog_type_user" EntityType="qds11527190_dbModel.Store.guanwang_vyw_blog_type_user" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_blog_type_user">
+      <DefiningQuery>SELECT 
+      [guanwang_vyw_blog_type_user].[blogID] AS [blogID], 
+      [guanwang_vyw_blog_type_user].[title] AS [title], 
+      [guanwang_vyw_blog_type_user].[describe] AS [describe], 
+      [guanwang_vyw_blog_type_user].[image] AS [image], 
+      [guanwang_vyw_blog_type_user].[content] AS [content], 
+      [guanwang_vyw_blog_type_user].[typeID] AS [typeID], 
+      [guanwang_vyw_blog_type_user].[userID] AS [userID], 
+      [guanwang_vyw_blog_type_user].[addTime] AS [addTime], 
+      [guanwang_vyw_blog_type_user].[updateTime] AS [updateTime], 
+      [guanwang_vyw_blog_type_user].[name] AS [name], 
+      [guanwang_vyw_blog_type_user].[userName] AS [userName], 
+      [guanwang_vyw_blog_type_user].[isDelete] AS [isDelete], 
+      [guanwang_vyw_blog_type_user].[likeCount] AS [likeCount], 
+      [guanwang_vyw_blog_type_user].[position] AS [position], 
+      [guanwang_vyw_blog_type_user].[realName] AS [realName], 
+      [guanwang_vyw_blog_type_user].[userTags] AS [userTags], 
+      [guanwang_vyw_blog_type_user].[userImage] AS [userImage], 
+      [guanwang_vyw_blog_type_user].[userDescribe] AS [userDescribe], 
+      [guanwang_vyw_blog_type_user].[tags] AS [tags], 
+      [guanwang_vyw_blog_type_user].[userWeb] AS [userWeb], 
+      [guanwang_vyw_blog_type_user].[facebook] AS [facebook], 
+      [guanwang_vyw_blog_type_user].[twitter] AS [twitter], 
+      [guanwang_vyw_blog_type_user].[googlePlus] AS [googlePlus], 
+      [guanwang_vyw_blog_type_user].[address] AS [address], 
+      [guanwang_vyw_blog_type_user].[area] AS [area], 
+      [guanwang_vyw_blog_type_user].[phone] AS [phone], 
+      [guanwang_vyw_blog_type_user].[Expr1] AS [Expr1]
+      FROM [dbo].[guanwang_vyw_blog_type_user] AS [guanwang_vyw_blog_type_user]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="guanwang_vyw_case_type" EntityType="qds11527190_dbModel.Store.guanwang_vyw_case_type" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_case_type">
+      <DefiningQuery>SELECT 
+      [guanwang_vyw_case_type].[caseID] AS [caseID], 
+      [guanwang_vyw_case_type].[describe] AS [describe], 
+      [guanwang_vyw_case_type].[image] AS [image], 
+      [guanwang_vyw_case_type].[typeID] AS [typeID], 
+      [guanwang_vyw_case_type].[addTime] AS [addTime], 
+      [guanwang_vyw_case_type].[updateTime] AS [updateTime], 
+      [guanwang_vyw_case_type].[title] AS [title], 
+      [guanwang_vyw_case_type].[name] AS [name], 
+      [guanwang_vyw_case_type].[userID] AS [userID], 
+      [guanwang_vyw_case_type].[userName] AS [userName], 
+      [guanwang_vyw_case_type].[userEmail] AS [userEmail], 
+      [guanwang_vyw_case_type].[userRole] AS [userRole], 
+      [guanwang_vyw_case_type].[userStatus] AS [userStatus], 
+      [guanwang_vyw_case_type].[realName] AS [realName], 
+      [guanwang_vyw_case_type].[position] AS [position], 
+      [guanwang_vyw_case_type].[userTags] AS [userTags], 
+      [guanwang_vyw_case_type].[userDescribe] AS [userDescribe], 
+      [guanwang_vyw_case_type].[userWeb] AS [userWeb], 
+      [guanwang_vyw_case_type].[facebook] AS [facebook], 
+      [guanwang_vyw_case_type].[userImage] AS [userImage], 
+      [guanwang_vyw_case_type].[twitter] AS [twitter], 
+      [guanwang_vyw_case_type].[googlePlus] AS [googlePlus], 
+      [guanwang_vyw_case_type].[address] AS [address], 
+      [guanwang_vyw_case_type].[area] AS [area], 
+      [guanwang_vyw_case_type].[phone] AS [phone], 
+      [guanwang_vyw_case_type].[link] AS [link], 
+      [guanwang_vyw_case_type].[weight] AS [weight]
+      FROM [dbo].[guanwang_vyw_case_type] AS [guanwang_vyw_case_type]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="guanwang_vyw_product_type" EntityType="qds11527190_dbModel.Store.guanwang_vyw_product_type" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_product_type">
+      <DefiningQuery>SELECT 
+      [guanwang_vyw_product_type].[name] AS [name], 
+      [guanwang_vyw_product_type].[updateTime] AS [updateTime], 
+      [guanwang_vyw_product_type].[addTime] AS [addTime], 
+      [guanwang_vyw_product_type].[image] AS [image], 
+      [guanwang_vyw_product_type].[productID] AS [productID], 
+      [guanwang_vyw_product_type].[title] AS [title], 
+      [guanwang_vyw_product_type].[describe] AS [describe], 
+      [guanwang_vyw_product_type].[typeID] AS [typeID]
+      FROM [dbo].[guanwang_vyw_product_type] AS [guanwang_vyw_product_type]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="guanwang_vyw_template_title" EntityType="qds11527190_dbModel.Store.guanwang_vyw_template_title" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_template_title">
+      <DefiningQuery>SELECT 
+      [guanwang_vyw_template_title].[templateID] AS [templateID], 
+      [guanwang_vyw_template_title].[height] AS [height], 
+      [guanwang_vyw_template_title].[thumbnail] AS [thumbnail], 
+      [guanwang_vyw_template_title].[pID] AS [pID], 
+      [guanwang_vyw_template_title].[addTime] AS [addTime], 
+      [guanwang_vyw_template_title].[title] AS [title], 
+      [guanwang_vyw_template_title].[updateTime] AS [updateTime]
+      FROM [dbo].[guanwang_vyw_template_title] AS [guanwang_vyw_template_title]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="guanwang_vyw_web_type" EntityType="qds11527190_dbModel.Store.guanwang_vyw_web_type" store:Type="Views" store:Schema="dbo" store:Name="guanwang_vyw_web_type">
+      <DefiningQuery>SELECT 
+      [guanwang_vyw_web_type].[name] AS [name], 
+      [guanwang_vyw_web_type].[title] AS [title], 
+      [guanwang_vyw_web_type].[image] AS [image], 
+      [guanwang_vyw_web_type].[typeID] AS [typeID], 
+      [guanwang_vyw_web_type].[addTime] AS [addTime], 
+      [guanwang_vyw_web_type].[updateTime] AS [updateTime], 
+      [guanwang_vyw_web_type].[websiteID] AS [websiteID], 
+      [guanwang_vyw_web_type].[weight] AS [weight]
+      FROM [dbo].[guanwang_vyw_web_type] AS [guanwang_vyw_web_type]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="guanwang_banner_about">
+    <Key>
+      <PropertyRef Name="bannerID" />
+    </Key>
+    <Property Name="bannerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+    <Property Name="isShow" Type="bit" Nullable="false" />
+    <Property Name="weight" Type="int" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_banner_index">
+    <Key>
+      <PropertyRef Name="bannerID" />
+    </Key>
+    <Property Name="bannerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bannerTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="bannerDescripe" Type="nvarchar" MaxLength="500" />
+    <Property Name="weight" Type="int" />
+    <Property Name="bannerImage" Type="nvarchar" MaxLength="1050" />
+    <Property Name="peopleImage" Type="nvarchar" MaxLength="1050" />
+    <Property Name="link" Type="nvarchar" MaxLength="1050" />
+    <Property Name="isShow" Type="bit" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_blog">
+    <Key>
+      <PropertyRef Name="blogID" />
+    </Key>
+    <Property Name="blogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="tags" Type="nvarchar" MaxLength="100" />
+    <Property Name="typeID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="likeCount" Type="int" />
+    <Property Name="isDelete" Type="bit" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_blog_type">
+    <Key>
+      <PropertyRef Name="typeID" />
+    </Key>
+    <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="weight" Type="int" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_case">
+    <Key>
+      <PropertyRef Name="caseID" />
+    </Key>
+    <Property Name="caseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="link" Type="nvarchar" MaxLength="1050" />
+    <Property Name="typeID" Type="int" />
+    <Property Name="userID" Type="int" />
+    <Property Name="weight" Type="int" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_case_type">
+    <Key>
+      <PropertyRef Name="typeID" />
+    </Key>
+    <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_evaluation">
+    <Key>
+      <PropertyRef Name="evaluationID" />
+    </Key>
+    <Property Name="evaluationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="url" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="isRecommend" Type="bit" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_feedback">
+    <Key>
+      <PropertyRef Name="feedbackID" />
+    </Key>
+    <Property Name="feedbackID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="company" Type="nvarchar" MaxLength="100" />
+    <Property Name="subject" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="message" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_footer">
+    <Key>
+      <PropertyRef Name="footerID" />
+    </Key>
+    <Property Name="footerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="url" Type="nvarchar" MaxLength="1050" />
+    <Property Name="type" Type="int" />
+    <Property Name="isShow" Type="bit" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_good">
+    <Key>
+      <PropertyRef Name="goodID" />
+    </Key>
+    <Property Name="goodID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_hot">
+    <Key>
+      <PropertyRef Name="hotID" />
+    </Key>
+    <Property Name="hotID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="blogID" Type="int" />
+    <Property Name="ipAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_like">
+    <Key>
+      <PropertyRef Name="likeID" />
+    </Key>
+    <Property Name="likeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="navTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_partner">
+    <Key>
+      <PropertyRef Name="partnerID" />
+    </Key>
+    <Property Name="partnerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+    <Property Name="url" Type="nvarchar" MaxLength="1050" />
+    <Property Name="isShow" Type="bit" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_pricing">
+    <Key>
+      <PropertyRef Name="pricingID" />
+    </Key>
+    <Property Name="pricingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="nvarchar" MaxLength="50" />
+    <Property Name="remark1" Type="nvarchar" MaxLength="50" />
+    <Property Name="remark2" Type="nvarchar" MaxLength="50" />
+    <Property Name="remark3" Type="nvarchar" MaxLength="50" />
+    <Property Name="remark4" Type="nvarchar" MaxLength="50" />
+    <Property Name="remark5" Type="nvarchar" MaxLength="50" />
+    <Property Name="url" Type="nvarchar" MaxLength="100" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_product">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="typeID" Type="int" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_product_type">
+    <Key>
+      <PropertyRef Name="typeID" />
+    </Key>
+    <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_service">
+    <Key>
+      <PropertyRef Name="serviceID" />
+    </Key>
+    <Property Name="serviceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="iconClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_skill">
+    <Key>
+      <PropertyRef Name="skillID" />
+    </Key>
+    <Property Name="skillID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="percent" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="colorClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_template">
+    <Key>
+      <PropertyRef Name="templateID" />
+    </Key>
+    <Property Name="templateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="height" Type="nvarchar" MaxLength="50" />
+    <Property Name="thumbnail" Type="nvarchar" Nullable="false" MaxLength="1050" />
+    <Property Name="pID" Type="int" Nullable="false" />
+    <Property Name="html" Type="nvarchar(max)" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_template_title">
+    <Key>
+      <PropertyRef Name="pID" />
+    </Key>
+    <Property Name="pID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_title">
+    <Key>
+      <PropertyRef Name="titleID" />
+    </Key>
+    <Property Name="titleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title1" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe1" Type="nvarchar" MaxLength="500" />
+    <Property Name="title2" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe2" Type="nvarchar" MaxLength="500" />
+    <Property Name="title3" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe3" Type="nvarchar" MaxLength="500" />
+    <Property Name="title4" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe4" Type="nvarchar" MaxLength="500" />
+    <Property Name="title5" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe5" Type="nvarchar" MaxLength="500" />
+    <Property Name="title6" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe6" Type="nvarchar" MaxLength="500" />
+    <Property Name="typeid" Type="int" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_user">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userPwd" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userRole" Type="int" Nullable="false" />
+    <Property Name="userStatus" Type="bit" Nullable="false" />
+    <Property Name="realName" Type="nvarchar" MaxLength="50" />
+    <Property Name="position" Type="nvarchar" MaxLength="100" />
+    <Property Name="userTags" Type="nvarchar" MaxLength="100" />
+    <Property Name="userDescribe" Type="nvarchar" MaxLength="1050" />
+    <Property Name="userImage" Type="nvarchar" MaxLength="1050" />
+    <Property Name="userWeb" Type="nvarchar" MaxLength="500" />
+    <Property Name="facebook" Type="nvarchar" MaxLength="1050" />
+    <Property Name="twitter" Type="nvarchar" MaxLength="1050" />
+    <Property Name="googlePlus" Type="nvarchar" MaxLength="1050" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="area" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="isDelete" Type="bit" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="loginTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_web">
+    <Key>
+      <PropertyRef Name="webID" />
+    </Key>
+    <Property Name="webID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="webName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="template" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="websiteID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_web_type">
+    <Key>
+      <PropertyRef Name="typeID" />
+    </Key>
+    <Property Name="typeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="weight" Type="int" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="guanwang_website">
+    <Key>
+      <PropertyRef Name="websiteID" />
+    </Key>
+    <Property Name="websiteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+    <Property Name="typeID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_blog_type_user”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="guanwang_vyw_blog_type_user">
+    <Key>
+      <PropertyRef Name="blogID" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="describe" />
+      <PropertyRef Name="typeID" />
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="blogID" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="typeID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="isDelete" Type="bit" />
+    <Property Name="likeCount" Type="int" />
+    <Property Name="position" Type="nvarchar" MaxLength="100" />
+    <Property Name="realName" Type="nvarchar" MaxLength="50" />
+    <Property Name="userTags" Type="nvarchar" MaxLength="100" />
+    <Property Name="userImage" Type="nvarchar" MaxLength="1050" />
+    <Property Name="userDescribe" Type="nvarchar" MaxLength="1050" />
+    <Property Name="tags" Type="nvarchar" MaxLength="100" />
+    <Property Name="userWeb" Type="nvarchar" MaxLength="500" />
+    <Property Name="facebook" Type="nvarchar" MaxLength="1050" />
+    <Property Name="twitter" Type="nvarchar" MaxLength="1050" />
+    <Property Name="googlePlus" Type="nvarchar" MaxLength="1050" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="area" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Expr1" Type="bit" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_case_type”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="guanwang_vyw_case_type">
+    <Key>
+      <PropertyRef Name="caseID" />
+      <PropertyRef Name="describe" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="userName" />
+      <PropertyRef Name="userEmail" />
+      <PropertyRef Name="userRole" />
+      <PropertyRef Name="userStatus" />
+    </Key>
+    <Property Name="caseID" Type="int" Nullable="false" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="typeID" Type="int" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userID" Type="int" />
+    <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userRole" Type="int" Nullable="false" />
+    <Property Name="userStatus" Type="bit" Nullable="false" />
+    <Property Name="realName" Type="nvarchar" MaxLength="50" />
+    <Property Name="position" Type="nvarchar" MaxLength="100" />
+    <Property Name="userTags" Type="nvarchar" MaxLength="100" />
+    <Property Name="userDescribe" Type="nvarchar" MaxLength="1050" />
+    <Property Name="userWeb" Type="nvarchar" MaxLength="500" />
+    <Property Name="facebook" Type="nvarchar" MaxLength="1050" />
+    <Property Name="userImage" Type="nvarchar" MaxLength="1050" />
+    <Property Name="twitter" Type="nvarchar" MaxLength="1050" />
+    <Property Name="googlePlus" Type="nvarchar" MaxLength="1050" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="area" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="link" Type="nvarchar" MaxLength="1050" />
+    <Property Name="weight" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_product_type”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="guanwang_vyw_product_type">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="productID" />
+      <PropertyRef Name="describe" />
+      <PropertyRef Name="typeID" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="updateTime" Type="datetime" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="image" Type="nvarchar" MaxLength="1050" />
+    <Property Name="productID" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="describe" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="typeID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_template_title”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="guanwang_vyw_template_title">
+    <Key>
+      <PropertyRef Name="templateID" />
+      <PropertyRef Name="thumbnail" />
+      <PropertyRef Name="pID" />
+    </Key>
+    <Property Name="templateID" Type="int" Nullable="false" />
+    <Property Name="height" Type="nvarchar" MaxLength="50" />
+    <Property Name="thumbnail" Type="nvarchar" Nullable="false" MaxLength="1050" />
+    <Property Name="pID" Type="int" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="updateTime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“qds11527190_db.dbo.guanwang_vyw_web_type”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="guanwang_vyw_web_type">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="image" />
+      <PropertyRef Name="typeID" />
+      <PropertyRef Name="websiteID" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" Nullable="false" MaxLength="1050" />
+    <Property Name="typeID" Type="int" Nullable="false" />
+    <Property Name="addTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+    <Property Name="websiteID" Type="int" Nullable="false" />
+    <Property Name="weight" Type="int" />
+  </EntityType>
+</Schema>

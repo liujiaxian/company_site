@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "服务邻域";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@{Model.guanwang_title titlemodel = ViewData["model"] as Model.guanwang_title;}
+<section id="feature" class="transparent-bg">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>@titlemodel.title1</h2>
+            <p class="lead">@titlemodel.describe1</p>
+        </div>
+
+        <div class="row">
+            <div class="features">
+                @{List<Model.guanwang_service> list = ViewData["list"] as List<Model.guanwang_service>;}
+                @foreach (var item in list)
+                {
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa @item.iconClass"></i>
+                            <h2>@item.title</h2>
+                            <h3>@item.describe</h3>
+                        </div>
+                    </div>
+                    <!--/.col-md-4-->
+                }
+            </div>
+            <!--/.services-->
+        </div>
+        <!--/.row-->
+
+
+        <div class="get-started center wow fadeInDown">
+            <h2>@titlemodel.title2</h2>
+            <p class="lead">@titlemodel.describe2</p>
+            <div class="request">
+                <h4><a href="#">Request a free Quote</a></h4>
+            </div>
+        </div>
+        <!--/.get-started-->
+
+        <div class="clients-area center wow fadeInDown">
+            <h2>@titlemodel.title3</h2>
+            <p class="lead">@titlemodel.describe3</p>
+        </div>
+
+        <div class="row">
+            @{List<Model.guanwang_evaluation> clientlist = ViewData["clientlist"] as List<Model.guanwang_evaluation>;}
+            @foreach (var item in clientlist)
+            {
+                <div class="col-md-4 wow fadeInDown">
+                    <div class="clients-comments text-center">
+                        <img src="@item.image" class="img-circle" alt="">
+                        <h3>@item.describe</h3>
+                        <h4><span>-@item.name /</span>  项目地址 @item.url</h4>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+    <!--/.container-->
+</section>
+<!--/#feature-->

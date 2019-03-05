@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "BannerAboutEdit";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{Model.guanwang_banner_about about = ViewData["model"] as Model.guanwang_banner_about;}
+
+<div class="definewidth m20">
+<table class="table table-bordered table-hover m10">
+    <tr>
+        <td class="tableleft">编号</td>
+        <td>@about.bannerID</td>
+    </tr>
+    <tr>
+        <td class="tableleft">图片</td>
+        <td>
+            <img src="@about.image" style="width:200px;height:150px;" id="txtimagesrc" /><br />
+            <input type="hidden" value="" id="txtimagevalue" />
+            <button class="btn btn-primary" onclick="doUpload('banner')">上传图片</button>&nbsp;&nbsp;推荐尺寸1169 x 487
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft">状态</td>
+        <td>
+            @(about.isShow==true?"显示":"不显示")
+        </td>
+    </tr>
+    <tr>
+        <td class="tableleft"></td>
+        <td>
+            <button class="btn btn-primary" onclick="btn_save()">保存</button> &nbsp;&nbsp;<button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+        </td>
+    </tr>
+</table>
+</div>
+
+@section footer{
+    <script src="~/Areas/GuanWang/Js/jquery.upload.js"></script>
+    <script src="~/Areas/GuanWang/Js/imageupload.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "BannerAbout";
+            });
+        });
+
+        //提交数据
+        function btn_save() {
+            var imgurl = $("#txtimagevalue").val();
+            if (imgurl == "" || imgurl == null) {
+                alertMsg("请上传图片");
+                return;
+            }
+
+            $.post("BannerAboutEdit", { id: '@about.bannerID', imgurl: imgurl }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status==0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'BannerAbout';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+</script>
+}

@@ -1,0 +1,5 @@
+E:\mycase\guanwang\guanwang\Utility\bin\Release\Utility.dll
+E:\mycase\guanwang\guanwang\Utility\bin\Release\Utility.pdb
+E:\mycase\guanwang\guanwang\Utility\obj\Release\Utility.dll
+E:\mycase\guanwang\guanwang\Utility\obj\Release\Utility.pdb
+E:\mycase\guanwang\guanwang\Utility\obj\Release\Utility.csprojResolveAssemblyReference.cache

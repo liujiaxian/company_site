@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Title";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{List<Model.guanwang_title> list = ViewData["list"] as List<Model.guanwang_title>;}
+
+<div class="form-inline definewidth m20">
+    <button type="button" class="btn btn-success" onclick="btn_add_banner()">新增链接</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>管理操作</th>
+        </tr>
+    </thead>
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.titleID</td>
+            <td>
+                @Enum.GetName(typeof(Utility.Enum_Title_Type),item.typeid)</td>
+          
+            <td>
+                <a href="/GuanWang/ManagerHome/TitleEdit/@item.titleID">编辑</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@section footer{
+   
+}

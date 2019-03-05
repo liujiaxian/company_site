@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="/Areas/GuanWang/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Areas/GuanWang/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/Areas/GuanWang/Css/style.css" />
+    <script type="text/javascript" src="/Areas/GuanWang/Js/jquery.js"></script>
+    <script type="text/javascript" src="/Areas/GuanWang/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="/Areas/GuanWang/Js/ckform.js"></script>
+    <script type="text/javascript" src="/Areas/GuanWang/Js/common.js"></script>
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @@media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
+    @RenderSection("header", false)
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="color:red;padding:10px;">
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //错误信息提示
+        function alertMsg(msg) {
+            $(".modal-content").text(msg);
+            $(".modal").modal("show");
+            setTimeout(function () {
+                $(".modal").modal("hide")
+            }, 2000);
+        }
+
+        //退出
+        function btn_layout() {
+            $.post("/GuanWang/ManagerHome/Layout", {}, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = '/GuanWang/ManagerAccount/Login';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+    </script>
+    @RenderSection("footer", false)
+</body>
+</html>

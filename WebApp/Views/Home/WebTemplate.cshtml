@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "网页模板";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section header{
+    <link rel="stylesheet" href="/Content/css/sort_normalize.css">
+
+    <link rel="stylesheet" href="/Content/css/sort_layout.css">
+    <style type="text/css">
+        .label {
+            line-height: 1.3 !important;
+        }
+    </style>
+}
+
+<div class="container" style="background: #efefef url('/Content/images/ticks.png') repeat 0 0; padding-bottom: 20px; font-family: Helvetica, Arial, Verdana; font-size: 12px; padding: 20px;">
+    <div class="template">
+        <ul id="filters" class="clearfix">
+            @{List<Model.guanwang_web_type> typelist = ViewData["typelist"] as List<Model.guanwang_web_type>;}
+
+
+
+
+            @if (typelist.Count > 0)
+            {
+                string allstr = "";
+                foreach (var item in typelist)
+                {
+                    allstr += "category" + item.typeID + " ";
+                }
+                <li><span class="filter active" data-filter="@allstr">全部</span></li>
+                foreach (var item in typelist)
+                {
+                <li><span class="filter" data-filter="category@(item.typeID)">@item.name</span></li>
+                }
+            }
+        </ul>
+
+
+        <div id="portfoliolist">
+            @{List<Model.guanwang_vyw_web_type> list = ViewData["list"] as List<Model.guanwang_vyw_web_type>; }
+
+            @if (list.Count > 0)
+            {
+                foreach (var item in list)
+                {
+                <div class="portfolio category@(item.typeID)" data-cat="category@(item.typeID)" onclick="window.open('/home/template/@(item.websiteID).shtml')">
+
+                    <div class="portfolio-wrapper">
+
+                        <img src="@item.image" alt="@item.title" />
+
+                        <div class="label">
+
+                            <div class="label-text" style="padding: 5px 8px;">
+
+                                <a class="text-title" style="color: #fff;">@item.title</a>
+                                <span class="text-category">@item.name</span>
+
+                            </div>
+
+                            <div class="label-bg"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                }
+            }
+        </div>
+    </div>
+
+
+</div>
+<!-- container -->
+
+@section footer{
+    <script type="text/javascript" src="/Content/js/sort.jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/Content/js/sort.jquery.mixitup.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var filterList = {
+                init: function () {
+                    // MixItUp plugin
+
+                    $('#portfoliolist').mixitup({
+
+                        targetSelector: '.portfolio',
+
+                        filterSelector: '.filter',
+
+                        effects: ['fade'],
+
+                        easing: 'snap',
+
+                        // call the hover effect
+
+                        onMixEnd: filterList.hoverEffect()
+
+                    });
+                },
+
+                hoverEffect: function () {
+                    // Simple parallax effect
+                    $('#portfoliolist .portfolio').hover(
+
+                        function () {
+
+                            $(this).find('.label').stop().animate({ bottom: 0 }, 200, 'easeOutQuad');
+
+                            $(this).find('img').stop().animate({ top: -30 }, 500, 'easeOutQuad');
+
+                        },
+
+                        function () {
+
+                            $(this).find('.label').stop().animate({ bottom: -40 }, 200, 'easeInQuad');
+
+                            $(this).find('img').stop().animate({ top: 0 }, 300, 'easeOutQuad');
+
+                        }
+
+                    );
+                }
+            };
+            // Run the show!
+            filterList.init();
+        });
+    </script>
+}

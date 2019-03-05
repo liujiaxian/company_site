@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "TemplateContent";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+@section header{
+    <link href="~/Areas/GuanWang/Css/pagebar.css" rel="stylesheet" />
+}
+<div class="form-inline definewidth m20">
+    <select onchange="btn_type(this.value)" id="txtseltype">
+        <option value="0" selected>请选择类型</option>
+        @{List<Model.guanwang_web_type> typelist = ViewData["typelist"] as List<Model.guanwang_web_type>;}
+        @foreach (var item in typelist)
+        {
+            <option value="@item.typeID">@item.name</option>
+        }
+    </select>
+    &nbsp;&nbsp;
+    <button type="button" class="btn btn-success" onclick="btn_add_banner()">新增网站</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>图片</th>
+            <th>类型</th>
+            <th>添加时间</th>
+            <th>管理操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_vyw_web_type> list = ViewData["list"] as List<Model.guanwang_vyw_web_type>;}
+    @if (list != null)
+    {
+        foreach (var item in list)
+        {
+        <tr>
+            <td>@item.websiteID</td>
+            <td>@item.title</td>
+            <td>
+                <img src="@item.image" style="height:80px;width:100px;" /></td>
+            <td>@(item.name)</td>
+            <td>@(Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss"))</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/WebSiteEdit/@item.websiteID?page=@Request["page"]&typeid=@Request["typeid"]">编辑</a>
+                <a href="javascript:;" onclick="btn_delete(@item.websiteID)">删除</a>
+                <a href="javascript:;" onclick="btn_webpage(@item.websiteID)">页面</a>
+            </td>
+        </tr>
+        }
+    }
+    else
+    {
+        <tr><td colspan="6">暂无数据！</td></tr>
+    }
+</table>
+
+<div class="inline pull-right page page_nav">
+    @ViewBag.Count 条记录 @ViewBag.PageIndex/@ViewBag.PageCount 页 @Html.Raw(MyPageBar.PageSortTemplate((int)ViewBag.PageIndex, (int)ViewBag.PageCount, ViewBag.UrlParams))
+</div>
+
+@section footer{
+    <script type="text/javascript">
+
+        $(function () {
+            var id = '@Request["typeid"]';
+            if (id==""||id==null) {
+                id = 0;
+            }
+            $("#txtseltype").val(id);
+        })
+
+        //新增网站
+        function btn_add_banner() {
+            window.location = "WebSiteAdd";
+        }
+
+        //页面
+        function btn_webpage(id) {
+            window.location = "/guanwang/managerhome/websitepage/"+id;
+        }
+
+        function btn_type(id) {
+            var page = parseInt('@Request["page"]');
+            window.location = '/guanwang/managerhome/website?page=' + page + '&typeid=' + id;
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("WebSiteDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}
+

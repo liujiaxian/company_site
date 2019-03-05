@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "EvaluationEdit";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{Model.guanwang_evaluation edit = ViewData["model"] as Model.guanwang_evaluation;}
+
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover definewidth m10">       
+        <tr>
+            <td width="10%" class="tableleft">名称</td>
+            <td>
+                <input type="text" id="txtname" placeholder="请输入名称" value="@edit.name"/></td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">描述</td>
+            <td>
+                <textarea id="txtdescribe" placeholder="请输入描述" style="height:100px;">@edit.describe</textarea>
+            </td>
+        </tr>
+         <tr>
+            <td width="10%" class="tableleft">url</td>
+            <td>
+                <textarea id="txturl" placeholder="请输入url" style="height:100px;">@Server.UrlDecode(edit.url)</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">图片</td>
+            <td>
+                <img src="@edit.image" style="width:200px;height:150px;margin-bottom:10px;" id="txtimagesrc" /><br />
+                <input type="hidden" value="" id="txtimagevalue" />
+                <button class="btn btn-primary" onclick="doUpload('evaluation')">上传图片</button>&nbsp;&nbsp;推荐尺寸600 x 455
+            </td>
+        </tr>      
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script src="~/Areas/GuanWang/Js/jquery.upload.js"></script>
+    <script src="~/Areas/GuanWang/Js/imageupload.js"></script>
+    <script>
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "Evaluation";
+            });
+        });
+
+        //提交表单
+        function btn_save() {
+            var name = $("#txtname").val();
+            if (name == "" || name == null) {
+                $("#txtname").focus();
+                alertMsg("名称不能为空！");
+                return;
+            }
+
+            var describe = $("#txtdescribe").val();
+            if (describe == "" || describe == null) {
+                $("#txtdescribe").focus();
+                alertMsg("描述不能为空");
+                return;
+            }
+            var url = $("#txturl").val();
+            if (url == "" || url == null) {
+                $("#txturl").focus();
+                alertMsg("url不能为空");
+                return;
+            }
+
+            var img = $("#txtimagevalue").val();
+            
+          
+
+            var pams = {
+                id: '@edit.evaluationID',
+                name: name,
+                describe: describe,
+                url: encodeURIComponent(url),
+                img: img
+            };
+
+            $.post("EvaluationEdit", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'Evaluation';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+    </script>
+}
+
+
+

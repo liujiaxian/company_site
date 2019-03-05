@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "CaseEdit";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{Model.guanwang_case edit = ViewData["model"] as Model.guanwang_case;}
+
+@section header{
+
+}
+
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover definewidth m10">
+        <tr>
+            <td width="10%" class="tableleft">类型</td>
+            <td>
+                @{List<Model.guanwang_case_type> typelist = ViewData["typelist"] as List<Model.guanwang_case_type>;}
+                <select id="txttype">
+                    @foreach (var item in typelist)
+                    {
+                        if (item.typeID==edit.typeID)
+                        {
+                            <option value="@item.typeID" selected>@item.name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.typeID">@item.name</option>
+                        }
+                    }
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">标题</td>
+            <td>
+                <input type="text" id="txtname" placeholder="请输入标题" value="@edit.title"/></td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">描述</td>
+            <td>
+                <textarea id="txtdescribe" placeholder="请输入描述" style="height:50px;width:600px;">@edit.describe</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">图片</td>
+            <td>
+                <img src="@edit.image" style="width:200px;height:150px;margin-bottom:10px;" id="txtimagesrc" /><br />
+                <input type="hidden" value="" id="txtimagevalue" />
+                <button class="btn btn-primary" onclick="doUpload('case')">上传图片</button>&nbsp;&nbsp;推荐尺寸600 x 455
+            </td>
+        </tr>
+       <tr>
+            <td class="tableleft">链接地址</td>
+            <td>
+               <textarea id="txtlink" placeholder="请输入链接地址" style="height:50px;width:600px;">@Server.UrlDecode(edit.link)</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script src="~/Areas/GuanWang/Js/jquery.upload.js"></script>
+    <script src="~/Areas/GuanWang/Js/imageupload.js"></script>
+    <script>
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "Case";
+            });
+        });
+
+        //提交表单
+        function btn_save() {
+            var typeid = $("#txttype").val();
+           
+            var name = $("#txtname").val();
+            if (name == "" || name == null) {
+                $("#txtname").focus();
+                alertMsg("标题不能为空！");
+                return;
+            }
+
+            var describe = $("#txtdescribe").val();
+            if (describe == "" || describe == null) {
+                $("#txtdescribe").focus();
+                alertMsg("描述不能为空");
+                return;
+            }
+            if (describe.trim().length > 60) {
+                $("#txtdescribe").focus();
+                alertMsg("描述不能超过60个字符");
+                return;
+            }
+            var img = $("#txtimagevalue").val();
+            
+            var link = $("#txtlink").val();
+            if (link == "" || link == null) {
+                $("#txtlink").focus();
+                alertMsg("链接不能为空");
+                return;
+            }
+
+
+
+            var pams = {
+                id: '@edit.caseID',
+                typeid : typeid,
+                name: name,
+                describe: describe,
+                img: img,
+                link: encodeURIComponent(link)
+            };
+
+            $.post("CaseEdit", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'Case';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+    </script>
+}
+
+

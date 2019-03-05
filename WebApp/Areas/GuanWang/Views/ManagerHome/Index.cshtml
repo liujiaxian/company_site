@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/Areas/GuanWang/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="/Areas/GuanWang/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="/Areas/GuanWang/assets/css/main-min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="header">
+
+    <div class="dl-title">
+        <img src="/Areas/GuanWang/assets/img/top.png" style="height:30px;">
+    </div>
+
+    <div class="dl-log">欢迎您，<span class="dl-log-user">@ViewData["name"]</span><a href="javascript:;" title="退出系统" class="dl-log-quit" onclick="btn_layout()">[退出]</a>
+    </div>
+</div>
+<div class="content">
+    <div class="dl-main-nav">
+        <div class="dl-inform"><div class="dl-inform-title"><s class="dl-inform-icon dl-up"></s></div></div>
+        <ul id="J_Nav"  class="nav-list ks-clear">
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">系统管理</div></li>		
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">轮播管理</div></li>
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">类型管理</div></li>
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">内容管理</div></li>
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">模板管理</div></li>
+        </ul>
+    </div>
+    <ul id="J_NavContent" class="dl-tab-conten">
+
+    </ul>
+</div>
+<script type="text/javascript" src="/Areas/GuanWang/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/Areas/GuanWang/assets/js/bui-min.js"></script>
+<script type="text/javascript" src="/Areas/GuanWang/assets/js/common/main-min.js"></script>
+<script type="text/javascript" src="/Areas/GuanWang/assets/js/config-min.js"></script>
+<script>
+    BUI.use('common/main', function () {
+        var config = [{ id: '1', homePage: '1', menu: [{ text: '系统管理', items: [{ id: '1', text: '使用说明', href: '/GuanWang/ManagerHome/ManagerInfo' }, { id: '2', text: '修改密码', href: '/GuanWang/ManagerHome/ResetPwd' }, { id: '3', text: '标题管理', href: '/GuanWang/ManagerHome/Title' }, { id: '4', text: '用户管理', href: '/GuanWang/ManagerHome/Users' }, { id: '6', text: '底部管理', href: '/GuanWang/ManagerHome/Footer' }] }] }, { id: '7', homePage: '7', menu: [{ text: '轮播管理', items: [{ id: '7', text: '首页轮播', href: '/GuanWang/ManagerHome/Banner' }, { id: '8', text: '关于轮播', href: '/GuanWang/ManagerHome/BannerAbout' }] }] }, { id: '14', homePage: '14', menu: [{ text: '类型管理', items: [{ id: '14', text: '项目类型', href: '/GuanWang/ManagerHome/CaseType' }, { id: '15', text: '产品类型', href: '/GuanWang/ManagerHome/ProductType' }, { id: '16', text: '博客类型', href: '/GuanWang/ManagerHome/BlogType' }, { id: '17', text: '网站类型', href: '/GuanWang/ManagerHome/WebType' }] }] }, { id: '18', homePage: '19', menu: [{ text: '内容管理', items: [{ id: '19', text: '项目案例', href: '/GuanWang/ManagerHome/Case' }, { id: '21', text: '客户评价', href: '/GuanWang/ManagerHome/Evaluation' }, { id: '22', text: '擅长领域', href: '/GuanWang/ManagerHome/Good' }, { id: '23', text: '喜欢我们', href: '/GuanWang/ManagerHome/Like' }, { id: '24', text: '合作伙伴', href: '/GuanWang/ManagerHome/Partner' }, { id: '25', text: '产品介绍', href: '/GuanWang/ManagerHome/Product' }, { id: '26', text: '服务领域', href: '/GuanWang/ManagerHome/Service' }, { id: '27', text: '技能介绍', href: '/GuanWang/ManagerHome/Skill' }, { id: '29', text: '项目定价', href: '/GuanWang/ManagerHome/Pricing' }, { id: '30', text: '博客管理', href: '/GuanWang/ManagerHome/Blog' }] }] }, { id: '50', homePage: '50', menu: [{ text: '内容管理', items: [{ id: '50', text: '模板标题', href: '/GuanWang/ManagerHome/TemplateTitle' }, { id: '51', text: '模板内容', href: '/GuanWang/ManagerHome/TemplateContent' }, { id: '52', text: '网站管理', href: '/GuanWang/ManagerHome/WebSite' }] }] }];
+        new PageUtil.MainPage({
+            modulesConfig: config
+        });
+    });
+</script>
+<div style="text-align:center;">
+<p>来源：<a href="http://g.pqpqpq.cn/" target="_blank">捧起网</a></p>
+</div>
+</body>
+</html>
+
+<script>
+    //退出
+    function btn_layout() {
+        $.post("/GuanWang/ManagerHome/Layout", {}, function (serverData) {
+            var jsondata = $.parseJSON(serverData);
+            if (jsondata.status == 0) {
+                window.location = '/GuanWang/ManagerAccount/Login';
+            } else {
+                alert(jsondata.msg);
+            }
+        });
+    }
+</script>

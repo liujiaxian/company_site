@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "User";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+    @if ((int)Utility.Enum_User_Role.超级管理员==Convert.ToInt32(ViewData["roleid"]))
+    {
+        <button type="button" class="btn btn-success" onclick="btn_add()">新增用户</button>
+    }
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>用户id</th>
+            <th>用户名称</th>
+            <th>用户邮箱</th>
+            <th>用户角色</th>
+            <th>注册时间</th>
+            <th>最后登录时间</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_user> list = ViewData["list"] as List<Model.guanwang_user>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.userID</td>
+            <td>@item.userName</td>
+            <td>@item.userEmail</td>
+            <td>@Enum.GetName(typeof(Utility.Enum_User_Role), item.userRole)</td>
+            <td>@Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@Convert.ToDateTime(item.loginTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@(item.userStatus == true ? "正常" : "禁用")</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/UsersEdit/@item.userID">编辑</a>
+                <a href="javascript:;" onclick="btn_update_status(@item.userID)">状态</a>
+                <a href="javascript:;" onclick="btn_delete(@item.userID)">删除</a>
+            </td>
+        </tr>	
+    }
+</table>
+
+@section footer{
+    <script type="text/javascript">
+        //添加用户
+        function btn_add() {
+            window.location = "UsersAdd";
+        }
+
+        //更新状态
+        function btn_update_status(id) {
+            $.post("UsersStatus", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("UsersDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}

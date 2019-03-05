@@ -1,0 +1,229 @@
+﻿@{Model.qds11527190_dbEntities db = new Model.qds11527190_dbEntities();}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.Title - 极晖网络科技有限公司</title>
+    <meta name="description" content="中山市极晖网络科技有限公司，专业网站开发，一直以周期快、质量好、服务好为主旨，开发出您心目中最满意的产品。">
+    <meta name="keywords" content="中山市极晖网络科技有限公司,网站开发,专业,中山网站开发,中山网站建设">
+    <!-- core CSS -->
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Content/css/animate.min.css" rel="stylesheet">
+    <link href="/Content/css/prettyphoto.css" rel="stylesheet">
+    <link href="/Content/css/main.css" rel="stylesheet">
+    <link href="/Content/css/responsive.css" rel="stylesheet">
+    <!-- 客服 -->
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/Content/js/html5shiv.js"></script>
+    <script src="/Content/js/respond.min.js"></script>
+    <![endif]-->
+    @* <link rel="shortcut icon" href="/Content/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Content/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/images/ico/apple-touch-icon-57-precomposed.png">*@
+    @RenderSection("header", false)
+</head>
+<body class="homepage">
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="top-number">
+                            <p><i class="fa fa-meh-o"></i>欢迎光临中山市极晖网络科技有限公司</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="social">
+                            <div class="search">
+                                <form role="form">
+                                    <input type="text" class="search-form" autocomplete="off" placeholder="搜索">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.top-bar-->
+        <div class="header-strip">
+        </div>
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/home/index.shtml">
+                        <img src="/Content/picture/logo.gif" alt="logo"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav navmain">
+                        <li><a href="/home/index.shtml">首页</a></li>
+                        <li><a href="/home/aboutus.shtml">关于我们</a></li>
+                        <li><a href="/home/services.shtml">服务领域</a></li>
+                        <li><a href="/home/cases.shtml">项目案例</a></li>
+                        <li><a href="/home/webtemplate.shtml">模板展示</a></li>
+                        @* <li class="dropdown">
+                            <a href="/home/webtemplate.shtml" class="dropdown-toggle" data-toggle="dropdown" onclick="window.location='/home/webtemplate.shtml'">模板展示 <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">企业模板</a></li>
+                                <li><a href="#">博客模板</a></li>
+                                <li><a href="#">商城模板</a></li>
+                                <li><a href="#">论坛模板</a></li>
+                                <li><a href="#">移动端模板</a></li>
+                                <li><a href="#">房地产模板</a></li>
+                                <li><a href="/center/index">自定义模板</a></li>
+                            </ul>
+                        </li>*@
+
+                        <li><a href="/home/blog.shtml">官方博客</a></li>
+                        <li><a href="/home/pricing.shtml">项目定价</a></li>
+                        <li><a href="/home/contactus.shtml">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
+    </header>
+    <!--/header-->
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                @{var footerlist = db.guanwang_footer.Where(c => c.type == 0).ToList();}
+                @foreach (var item in footerlist)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="widget">
+                            <h3>@item.name</h3>
+                            <ul>
+                                @{var list1 = db.guanwang_footer.Where(c => c.type == item.footerID).ToList();}
+                                @foreach (var item1 in list1)
+                                {
+                                    <li><a href="@Server.UrlDecode(item1.url)" target="_blank">@item1.name</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016  ll Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="/home/index.shtml">首页</a></li>
+                        <li><a href="/home/aboutus.shtml">关于我们</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="/home/contactus.shtml">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/jquery.prettyphoto.js"></script>
+    <script src="/Content/js/jquery.isotope.min.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Content/js/wow.min.js"></script>
+    <script type="text/javascript">
+        //导航选中
+        $(".navmain a").each(function () {
+            $this = $(this);
+            if ($this[0].href == String(window.location)) {
+                $this.parent().addClass("active");
+            }
+            //console.log($this[0].href + "|" + cururl);
+        });
+    </script>
+    @RenderSection("footer", false)
+
+    <!-- 代码部分begin -->
+    <div class="fixed-bar">
+        <div class="wide-bar">
+            <div class="consult-box">
+                <div class="consult-header clearfix">
+                    <div class="consult-title">免费咨询</div>
+                </div>
+                <ul class="consult-list">
+                    <li class="clearfix">
+                        <span>刘先生：</span>
+                        <a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=36a2bd182f22784b3245daf753a5de050aef223d57e1f011">
+                            <img border="0" src="/Content/images/JS_qq.png" alt="QQ" title="点击开始QQ交谈/留言"></a>
+                    </li>
+                  @*  <li class="clearfix">
+                        <span>莫先生：</span>
+                        <a target="_blank" href="">
+                            <img border="0" src="/Content/images/JS_qq.png" alt="QQ" title="点击开始QQ交谈/留言"></a>
+                    </li>*@
+                    <li class="clearfix"><span class="tel-icon">150-8997-2540</span></li>
+                </ul>
+            </div>
+            <a href="javascript:scrollTo(0,0)" class="gotop" title="回到顶部" style="display: none;"><i class="icon">返回顶部</i><span>返回顶部</span></a>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var scrollTop = $(document).scrollTop(), bodyHeight = $(window).height();
+                if (scrollTop > bodyHeight) {
+                    $('.fixed-bar .gotop').css('display', 'block');
+                } else {
+                    $('.fixed-bar .gotop').css('display', 'none');
+                }
+            })
+        })
+    </script>
+    <!-- 代码部分end -->
+</body>
+</html>
+<!--百度链接自动推送-->
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+

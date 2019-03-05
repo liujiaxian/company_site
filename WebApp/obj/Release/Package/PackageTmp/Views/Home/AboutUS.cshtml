@@ -1,0 +1,210 @@
+﻿@{
+    ViewBag.Title = "关于我们";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@{List<Model.guanwang_banner_about> bannerlist = ViewData["bannerlist"] as List<Model.guanwang_banner_about>; Model.guanwang_title titlemodel = ViewData["model"] as Model.guanwang_title;}
+<section id="about-us">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>@titlemodel.title1</h2>
+            <p class="lead">
+                @titlemodel.describe1
+            </p>
+        </div>
+
+        <!-- about us slider -->
+        <div id="about-slider">
+            <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators visible-xs">
+                    @if (bannerlist != null)
+                    {
+                        foreach (var item in bannerlist)
+                        {
+                        <li data-target="#carousel-slider" data-slide-to="@bannerlist.IndexOf(item)" class="@(bannerlist.IndexOf(item) == 0 ? "active" : "")"></li>
+                        }
+                    }
+                </ol>
+
+                <div class="carousel-inner">
+                    @if (bannerlist != null)
+                    {
+                        foreach (var item in bannerlist)
+                        {
+                        <div class="item @(bannerlist.IndexOf(item) == 0 ? "active" : "")">
+                            <img src="@item.image" class="img-responsive" alt="">
+                        </div>
+                        }
+                    }
+                </div>
+
+                <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+            <!--/#carousel-slider-->
+        </div>
+        <!--/#about-slider-->
+
+
+        <!-- Our Skill -->
+        <div class="skill-wrap clearfix">
+
+            <div class="center wow fadeInDown">
+                <h2>@titlemodel.title2</h2>
+                <p class="lead">
+                    @titlemodel.describe2
+                </p>
+            </div>
+
+            <div class="row">
+                @{List<Model.guanwang_skill> skilllist = ViewData["skilllist"] as List<Model.guanwang_skill>;}
+                @foreach (var item in skilllist)
+                {
+                    <div class="col-sm-3">
+                        <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="@item.colorClass">
+                                <p><em>@(item.percent)%</em></p>
+                                <p>@item.name</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <!--/.our-skill-->
+
+
+        <!-- our-team -->
+        <div class="team">
+            <div class="center wow fadeInDown">
+                <h2>@titlemodel.title3</h2>
+                <p class="lead">
+                    @titlemodel.describe3
+                </p>
+            </div>
+            @{List<Model.guanwang_user> teamlist = ViewData["teamlist"] as List<Model.guanwang_user>;}
+            <div class="row clearfix">
+                @foreach (var item in teamlist)
+                {
+                    if (teamlist.IndexOf(item) < 2)
+                    {
+                    <div class="col-md-4 col-sm-6 @(teamlist.IndexOf(item) == 0 ? "" : "col-md-offset-2")">
+                        <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#">
+                                        <img class="media-object" src="@(item.userImage==null?"/Content/picture/man1.jpg":item.userImage)" alt="" style="width:145px;height:137px;"></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4>@(item.realName == null ? item.userName : item.realName)</h4>
+                                    <h5>@item.position</h5>
+                                    <ul class="tag clearfix">
+                                        @if (!string.IsNullOrEmpty(item.userTags) && Server.UrlDecode(item.userTags).IndexOf(',') != -1)
+                                        {
+                                            string[] str = Server.UrlDecode(item.userTags).Split(',');
+                                            for (int i = 0; i < str.Length-1; i++)
+                                            {
+                                            <li class="btn"><a href="/home/blogsearch.shtml?tags=@str[i]">@str[i]</a></li>
+                                            }
+                                        }
+                                    </ul>
+
+                                    <ul class="social_icons">
+                                        <li><a href="@(item.facebook == null ? "javascript:void(0);" : item.facebook)" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="@(item.twitter == null ? "javascript:void(0);" : item.twitter)" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="@(item.googlePlus == null ? "javascript:void(0);" : item.googlePlus)" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--/.media -->
+                            <p>@item.userDescribe</p>
+                        </div>
+                    </div>
+                    }
+                }
+            </div>
+            <!--/.row -->
+            <div class="row team-bar">
+                <div class="first-one-arrow hidden-xs">
+                    <hr>
+                </div>
+                <div class="first-arrow hidden-xs">
+                    <hr>
+                    <i class="fa fa-angle-up"></i>
+                </div>
+                <div class="second-arrow hidden-xs">
+                    <hr>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+                <div class="third-arrow hidden-xs">
+                    <hr>
+                    <i class="fa fa-angle-up"></i>
+                </div>
+                <div class="fourth-arrow hidden-xs">
+                    <hr>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+            <!--skill_border-->
+
+            <div class="row clearfix">
+                @foreach (var item in teamlist)
+                {
+                    if (teamlist.IndexOf(item) >= 2)
+                    {
+                    <div class="col-md-4 col-sm-6 col-md-offset-2">
+                        <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="javascript:;">
+                                        <img class="media-object" src="@(item.userImage==null?"/Content/picture/man1.jpg":item.userImage)" alt="" style="width:145px;height:137px;"></a>
+                                </div>
+                                <div class="media-body">
+                                    <h4>@(item.realName == null ? item.userName : item.realName)</h4>
+                                    <h5>@item.position</h5>
+                                    <ul class="tag clearfix">
+                                        @if (!string.IsNullOrEmpty(item.userTags) && Server.UrlDecode(item.userTags).IndexOf(',') != -1)
+                                        {
+                                            string[] str = Server.UrlDecode(item.userTags).Split(',');
+                                            for (int i = 0; i < str.Length-1; i++)
+                                            {
+                                            <li class="btn"><a href="/home/blogsearch.shtml?tags=@str[i]">@str[i]</a></li>
+                                            }
+                                        }
+                                    </ul>
+
+                                    <ul class="social_icons">
+                                        <li><a href="@(item.facebook == null ? "javascript:void(0);" : item.facebook)" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="@(item.twitter == null ? "javascript:void(0);" : item.twitter)" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="@(item.googlePlus == null ? "javascript:void(0);" : item.googlePlus)" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--/.media -->
+                            <p>@item.userDescribe</p>
+                        </div>
+                    </div>
+                    }
+                }
+
+
+            </div>
+            <!--/.row-->
+        </div>
+        <!--section-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/about-us-->
+
+@section footer{
+    <script type="text/javascript">
+        $('.carousel').carousel()
+    </script>
+}

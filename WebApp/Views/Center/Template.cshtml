@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap Starter Kit - Blog 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="bskit, bootstrap starter kit, bootstrap builder" />
+	<meta name="description" content="Business Startup & Prototyping HTML Framework" />
+	
+   <!-- Loading Bootstrap -->
+    <link href="/Content/template/elements/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="/Content/template/elements/css/flat-ui.css" rel="stylesheet">
+    
+    <link href="/Content/template/elements/css/style.css" rel="stylesheet">
+
+    <link href="/Content/template/elements/css/style.complete.css" rel="stylesheet">
+    
+    <link href="/Content/template/elements/css/nivo-slider.css" rel="stylesheet">
+</head>
+<body>
+    
+<div id="page" class="page">
+    <!-- Start Story Posts Blog -->
+    @Html.Raw(Server.UrlDecode(ViewData["model"].ToString()))
+    <!--// End Story Posts Blog -->
+    
+</div><!-- /#page -->
+
+
+	<!-- Load JS here for greater good =============================-->
+    <script src="/Content/template/elements/js/jquery-1.8.3.min.js"></script>
+    <script src="/Content/template/elements/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="/Content/template/elements/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/Content/template/elements/js/bootstrap.min.js"></script>
+    <script src="/Content/template/elements/js/bootstrap-select.js"></script>
+    <script src="/Content/template/elements/js/bootstrap-switch.js"></script>
+    <script src="/Content/template/elements/js/flatui-checkbox.js"></script>
+    <script src="/Content/template/elements/js/flatui-radio.js"></script>
+    <script src="/Content/template/elements/js/jquery.tagsinput.js"></script>
+    <script src="/Content/template/elements/js/jquery.placeholder.js"></script>
+    <script src="/Content/template/elements/js/application.js"></script>
+	<script src="/Content/template/elements/js/jquery.nivo.slider.pack.js"></script>
+	<script>
+	
+	$(function(){
+		
+		startSlideshow();
+		
+	})
+	
+	function startSlideshow() {
+		
+	    $('#nivoSlider').nivoSlider({
+	    	effect: 'slideInRight'
+	    });
+		
+	}
+	
+	</script>
+</body>
+</html>

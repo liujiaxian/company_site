@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e6ab4c04c40d474c8c06e99a26892232" Name="关系图1">
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_banner_about" Width="1.5" PointX="10.935379100467721" PointY="17.532882028041819" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_banner_index" Width="1.5" PointX="2.6988835943391938" PointY="3.3443857446985255" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_blog" Width="1.5" PointX="0.63099272206006229" PointY="31.461396589624414" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_blog_type" Width="1.5" PointX="0.866585037143242" PointY="4.21793385046438" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_case" Width="1.5" PointX="7.1175686414901023" PointY="2.1935008327446415" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_case_type" Width="1.5" PointX="8.2671392915151731" PointY="17.559917592238598" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_evaluation" Width="1.5" PointX="7.8823098446625792" PointY="23.905621331141155" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_feedback" Width="1.5" PointX="11.728991014756723" PointY="19.359795624092126" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_footer" Width="1.5" PointX="8.9202001620643774" PointY="10.487593387480636" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_good" Width="1.5" PointX="0.57744539742239076" PointY="20.771012107269378" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_hot" Width="1.5" PointX="0.59927464490722615" PointY="16.217412017387066" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_like" Width="1.5" PointX="1.4079096174835739" PointY="15.316252462247505" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_partner" Width="1.5" PointX="5.5556536566259584" PointY="26.792509106356889" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_pricing" Width="1.5" PointX="1.6921766724866705" PointY="28.553141935054743" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_product" Width="1.5" PointX="7.7865874542792275" PointY="9.5776661530033067" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_product_type" Width="1.5" PointX="5.059058068813318" PointY="0.41829223950313976" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_service" Width="1.5" PointX="8.47417601033774" PointY="10.809968834188751" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_skill" Width="1.5" PointX="6.8639595149382764" PointY="0.89242839854789358" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_template" Width="1.5" PointX="10.717916143461091" PointY="25.780585122192551" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_template_title" Width="1.5" PointX="9.1033540000689" PointY="7.534986410073464" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_title" Width="1.5" PointX="11.134880639209822" PointY="16.568107806410691" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_user" Width="1.5" PointX="8.1853781119852229" PointY="7.42003950822169" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_web" Width="1.5" PointX="6.9981989464714189" PointY="15.624395243648623" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_web_type" Width="1.5" PointX="8.7444159894922819" PointY="12.16351159483358" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_website" Width="1.5" PointX="3.4426496827242197" PointY="4.5090057274834283" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_vyw_blog_type_user" Width="1.5" PointX="4.0052172467136842" PointY="30.926222666598029" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_vyw_case_type" Width="1.5" PointX="10.166549216102133" PointY="21.17876955362911" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_vyw_product_type" Width="1.5" PointX="4.6118223912137672" PointY="12.943598917193524" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_vyw_template_title" Width="1.5" PointX="5.1669211430321083" PointY="23.880770455990344" />
+        <EntityTypeShape EntityType="qds11527190_dbModel.guanwang_vyw_web_type" Width="1.5" PointX="7.6984909976359885" PointY="6.8901381524699454" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

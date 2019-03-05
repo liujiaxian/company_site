@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "TemplateTitle";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+    <button type="button" class="btn btn-success" onclick="btn_add_banner()">新增模板标题</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>标题</th>
+            <th>添加时间</th>
+            <th>更新时间</th>
+            <th>管理操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_template_title> list = ViewData["list"] as List<Model.guanwang_template_title>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.pID</td>
+            <td>
+                @item.title</td>
+            <td>
+                @Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@(item.updateTime==null?null:Convert.ToDateTime(item.updateTime).ToString("yyyy-MM-dd HH:mm:ss"))</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/TemplateTitleEdit/@item.pID">编辑</a>
+                <a href="javascript:;" onclick="btn_delete(@item.pID)">删除</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@section footer{
+    <script type="text/javascript">
+        //新增轮播
+        function btn_add_banner() {
+            window.location = "TemplateTitleAdd";
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("TemplateTitleDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}
+

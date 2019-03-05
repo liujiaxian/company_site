@@ -1,0 +1,205 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@{Model.qds11527190_dbEntities db = new Model.qds11527190_dbEntities(); Model.guanwang_title titlemodel = db.guanwang_title.Where(c => c.typeid == (int)Utility.Enum_Title_Type.官方博客).FirstOrDefault();}
+
+@section header{
+
+    @RenderSection("blogheader", false)
+}
+
+<section id="blog" class="container">
+    <div class="center">
+        <h2>@titlemodel.title1</h2>
+        <p class="lead">@titlemodel.describe1</p>
+    </div>
+
+    <div class="blog">
+        <div class="row">
+            <div class="col-md-8">
+                @RenderBody()
+            </div><!--/.col-md-8-->
+
+            <aside class="col-md-4">
+                <div class="widget search">
+                    <form role="form" action="/home/blogsearch.shtml" method="get">
+                        <input type="text" class="form-control search_box" autocomplete="off" placeholder="博客搜索" name="text">
+                    </form>
+                </div><!--/.search-->
+
+                <div class="widget categories">
+                    <h3>个性化推荐</h3>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @{
+                                int id = Convert.ToInt32(Request["id"]);
+                                List<Model.guanwang_vyw_blog_type_user> prelist = null;
+                                var premodel = db.guanwang_hot.Where(c => c.blogID == id).FirstOrDefault();
+                                if (premodel != null)
+                                {
+                                    var iplist = db.guanwang_hot.Where(c => c.ipAddress == premodel.ipAddress && c.blogID != id).OrderByDescending(c => c.addTime).Take(5).ToList();
+                                    if (iplist.Count > 0)
+                                    {
+                                        foreach (var item in iplist)
+                                        {
+                                            var blogmodel = db.guanwang_vyw_blog_type_user.Where(c => c.isDelete == false && c.blogID == item.blogID).FirstOrDefault();
+                                            prelist.Add(blogmodel);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        prelist = db.guanwang_vyw_blog_type_user.Where(c => c.isDelete == false).OrderByDescending(c => c.likeCount
+                                            ).Take(5).ToList();
+                                    }
+                                }
+                                else
+                                {
+                                    prelist = db.guanwang_vyw_blog_type_user.Where(c => c.isDelete == false).OrderByDescending(c => c.likeCount
+                                           ).Take(5).ToList();
+                                }
+                            }
+
+                            @foreach (var item in prelist)
+                            {
+                                <div class="single_comments">
+                                    <img src="@item.userImage" alt="@item.userName" style="width:64px;height:64px;cursor:pointer;" onclick="window.location='/home/aboutus.shtml'" />
+                                    <p><a href="/home/blogdetail/@(item.blogID).shtml" title="@item.title">@Utility.TextHide.GetSubString(item.title,34)</a></p>
+                                   
+                                    <div class="entry-meta small muted">
+                                        <span>作者 <a href="/home/aboutus.shtml">@item.userName</a></span> <span>分类 <a href="/home/blogsearch.shtml?type=@item.typeID">@item.name</a></span>
+                                    </div>
+                                    <div class="entry-meta small muted">
+                                        <span>浏览量 @item.likeCount</span> <span>发布时间 @Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd")</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div><!--/.recent comments-->
+
+
+                <div class="widget categories">
+                    <h3>分类</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="blog_category">
+                                @{
+                                    var list = db.guanwang_vyw_blog_type_user.Where(c => c.isDelete == false).OrderByDescending(c=>c.addTime).ToList();
+                                    var typelist = from p in list
+                                                   group p by new { p.typeID, p.name } into g
+                                                   select new
+                                                   {
+                                                       g.Key,
+                                                       Count = g.Count()
+                                                   };
+                                }
+                                @foreach (var item in typelist)
+                                {
+                                    <li><a href="/home/blogsearch.shtml?type=@item.Key.typeID">@item.Key.name <span class="badge">@item.Count</span></a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--/.categories-->
+
+                <div class="widget archieve">
+                    <h3>归档</h3>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="blog_archieve">
+                                @{
+                                    var query = from q in list
+                                                group q by Convert.ToDateTime(q.addTime).ToString("yyyy-MM") into g
+                                                select new { DT = g.Key, Value = g.Count() };
+                                }
+                                @foreach (var item in query)
+                                {
+                                    <li><a href="/home/blogsearch.shtml?time=@item.DT"><i class="fa fa-angle-double-right"></i> @item.DT <span class="pull-right">(@item.Value)</span></a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--/.archieve-->
+
+                <div class="widget tags">
+                    <h3>标签云</h3>
+                    <ul class="tag-cloud">
+                        @{
+                            List<string> tags = new List<string>();
+                            foreach (var item in list.Select(c => c.tags))
+                            {
+                                string tagstr = Server.UrlDecode(item);
+                                if (!string.IsNullOrEmpty(tagstr))
+                                {
+                                    if (tagstr.IndexOf(',') == -1)
+                                    {
+                                        tagstr += ",";
+                                    }
+                                    string[] str = tagstr.Split(',');
+                                    for (int i = 0; i < str.Length - 1; i++)
+                                    {
+                                        tags.Add(str[i]);
+                                    }
+                                }
+                            }
+
+                            List<string> tagslist = tags.Distinct().Take(20).ToList();
+                        }
+                        @if (tagslist != null)
+                        {
+                            foreach (var item in tagslist)
+                            {
+                                <li><a class="btn btn-xs btn-primary" href="/home/blogsearch.shtml?tags=@item">@item</a></li>
+                            }
+                        }
+                        
+                    </ul>
+                </div><!--/.tags-->
+
+                @*<div class="widget blog_gallery">
+                    <h3>Our Gallery</h3>
+                    <ul class="sidebar-gallery">
+                        <li><a href="#"><img src="/Content/picture/gallery1.png" alt="" /></a></li>
+                        <li><a href="#"><img src="/Content/picture/gallery2.png" alt="" /></a></li>
+                        <li><a href="#"><img src="/Content/picture/gallery3.png" alt="" /></a></li>
+                        <li><a href="#"><img src="/Content/picture/gallery4.png" alt="" /></a></li>
+                        <li><a href="#"><img src="/Content/picture/gallery5.png" alt="" /></a></li>
+                        <li><a href="#"><img src="/Content/picture/gallery6.png" alt="" /></a></li>
+                    </ul>
+                </div>*@
+                <!--/.blog_gallery-->
+                <div class="widget categories">
+                    <h3>最新博客</h3>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @{
+                               
+                                List<Model.guanwang_vyw_blog_type_user> newslist = db.guanwang_vyw_blog_type_user.Where(c =>c.isDelete==false).OrderByDescending(c=>c.addTime).Take(5).ToList();
+                            }
+
+                            @foreach (var item in newslist)
+                            {
+                                <div class="single_comments">
+                                    <img src="@item.userImage" alt="@item.userName" style="width:64px;height:64px;cursor:pointer;" onclick="window.location='/home/aboutus.shtml'" />
+                                    <p><a href="/home/blogdetail/@(item.blogID).shtml" title="@item.title">@Utility.TextHide.GetSubString(item.title,34)</a></p>
+
+                                    <div class="entry-meta small muted">
+                                        <span>作者 <a href="/home/aboutus.shtml">@item.userName</a></span> <span>分类 <a href="/home/blogsearch.shtml?type=@item.typeID">@item.name</a></span>
+                                    </div>
+                                    <div class="entry-meta small muted">
+                                        <span>浏览量 @item.likeCount</span> <span>发布时间 @Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd")</span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div><!--/.recent comments-->
+            </aside>
+        </div><!--/.row-->
+    </div>
+</section><!--/#blog-->
+@section footer{
+
+    @RenderSection("blogfooter", false)
+}

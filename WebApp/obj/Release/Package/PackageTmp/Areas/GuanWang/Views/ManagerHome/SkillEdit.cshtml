@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "SkillEdit";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{Model.guanwang_skill edit = ViewData["model"] as Model.guanwang_skill;}
+
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover definewidth m10">
+        <tr>
+            <td width="10%" class="tableleft">名称</td>
+            <td>
+                <input type="text" id="txtname" placeholder="请输入名称" value="@edit.name"/></td>
+        </tr>   
+         <tr>
+            <td width="10%" class="tableleft">百分比</td>
+            <td>
+                <input type="text" id="txtpercent" placeholder="请输入百分比" value="@edit.percent"/></td>
+        </tr>   
+         <tr>
+            <td width="10%" class="tableleft">颜色类</td>
+            <td>
+                <input type="text" id="txtcolor" placeholder="请输入颜色类" value="@edit.colorClass"/></td>
+        </tr>             
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script>
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "Skill";
+            });
+        });
+
+
+        //提交表单
+        function btn_save() {
+            var name = $("#txtname").val();
+            if (name==""||name==null) {
+                $("#txtname").focus();
+                alertMsg("名称不能为空！");
+                return;
+            }
+            var percent = $("#txtpercent").val();
+            if (percent == "" || percent == null) {
+                $("#txtpercent").focus();
+                alertMsg("百分比不能为空！");
+                return;
+            }
+
+            if (!isPInt(percent)) {
+                $("#txtpercent").focus();
+                alertMsg("百分比只能填数字！");
+                return;
+            }
+
+            var color = $("#txtcolor").val();
+            if (color == "" || color == null) {
+                $("#txtcolor").focus();
+                alertMsg("颜色类不能为空！");
+                return;
+            }
+
+            var pams = {
+                id:'@edit.skillID',
+                name: name,
+                percent: percent,
+                color: color
+            };
+
+            $.post("SkillEdit", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'Skill';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //正整数
+        function isPInt(str) {
+            var g = /^[1-9]*[1-9][0-9]*$/;
+            return g.test(str);
+        }
+    </script>
+}
+
+
+

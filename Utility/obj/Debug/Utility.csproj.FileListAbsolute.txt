@@ -1,0 +1,14 @@
+D:\mycase\guanwang\guanwang\Utility\bin\Debug\Utility.dll
+D:\mycase\guanwang\guanwang\Utility\bin\Debug\Utility.pdb
+D:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.dll
+D:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.pdb
+E:\mycase\guanwang\guanwang\Utility\bin\Debug\Utility.dll
+E:\mycase\guanwang\guanwang\Utility\bin\Debug\Utility.pdb
+E:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.dll
+E:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.pdb
+E:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+G:\mycase\guanwang\guanwang\Utility\bin\Debug\Utility.dll
+G:\mycase\guanwang\guanwang\Utility\bin\Debug\Utility.pdb
+G:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+G:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.dll
+G:\mycase\guanwang\guanwang\Utility\obj\Debug\Utility.pdb

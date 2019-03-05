@@ -1,0 +1,457 @@
+﻿@{
+    ViewBag.Title = "TitleEdit";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{Model.guanwang_title title = ViewData["model"] as Model.guanwang_title;}
+
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover m10">
+        @switch (title.typeid)
+        {
+            case (int)Utility.Enum_Title_Type.首页:
+       
+            <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+          <tr>
+                <td class="tableleft">标题2</td>
+                <td>
+                    <input type="text" name="name" id="txttitle2" value="@title.title2" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述2</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述2" id="txtdescribe2">@title.describe2</textarea>
+
+                </td>
+            </tr>
+         <tr>
+                <td class="tableleft">标题3</td>
+                <td>
+                    <input type="text" name="name" id="txttitle3" value="@title.title3" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述3</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述3" id="txtdescribe3">@title.describe3</textarea>
+
+                </td>
+            </tr>
+         <tr>
+                <td class="tableleft">标题4</td>
+                <td>
+                    <input type="text" name="name" id="txttitle4" value="@title.title4" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述4</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述4" id="txtdescribe4">@title.describe4</textarea>
+
+                </td>
+            </tr>
+          <tr>
+                <td class="tableleft">标题5</td>
+                <td>
+                    <input type="text" name="name" id="txttitle5" value="@title.title5" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述5</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述5" id="txtdescribe5">@title.describe5</textarea>
+
+                </td>
+            </tr>
+         <tr>
+                <td class="tableleft">标题6</td>
+                <td>
+                    <input type="text" name="name" id="txttitle6" value="@title.title6" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述6</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述6" id="txtdescribe6">@title.describe6</textarea>
+
+                </td>
+            </tr>
+                break;
+            case (int)Utility.Enum_Title_Type.关于我们:
+             <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+          <tr>
+                <td class="tableleft">标题2</td>
+                <td>
+                    <input type="text" name="name" id="txttitle2" value="@title.title2" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述2</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述2" id="txtdescribe2">@title.describe2</textarea>
+
+                </td>
+            </tr>
+         <tr>
+                <td class="tableleft">标题3</td>
+                <td>
+                    <input type="text" name="name" id="txttitle3" value="@title.title3" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述3</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述3" id="txtdescribe3">@title.describe3</textarea>
+
+                </td>
+            </tr>
+          
+                break;
+            case (int)Utility.Enum_Title_Type.服务领域:
+            <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+          <tr>
+                <td class="tableleft">标题2</td>
+                <td>
+                    <input type="text" name="name" id="txttitle2" value="@title.title2" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述2</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述2" id="txtdescribe2">@title.describe2</textarea>
+
+                </td>
+            </tr>
+         <tr>
+                <td class="tableleft">标题3</td>
+                <td>
+                    <input type="text" name="name" id="txttitle3" value="@title.title3" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述3</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述3" id="txtdescribe3">@title.describe3</textarea>
+
+                </td>
+            </tr>
+                break;
+            case (int)Utility.Enum_Title_Type.官方博客:
+            <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+           
+                break;
+            case (int)Utility.Enum_Title_Type.项目案例:
+            <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+           
+                break;
+            case (int)Utility.Enum_Title_Type.项目定价:
+            <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+                break;
+            case (int)Utility.Enum_Title_Type.联系我们:
+            <tr>
+                <td class="tableleft">标题1</td>
+                <td>
+                    <input type="text" name="name" id="txttitle1" value="@title.title1" /></td>
+            </tr>
+            <tr>
+                <td class="tableleft">描述1</td>
+                <td>
+                    <textarea style="height: 150px;" placeholder="请输入描述1" id="txtdescribe1">@title.describe1</textarea>
+
+                </td>
+            </tr>
+            
+                break;
+        }
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script type="text/javascript">
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "Title";
+            });
+
+        });
+
+        //保存
+        function btn_save() {
+            var typeid = '@title.typeid';
+            var title1, title2, title3, title4, title5, title6;
+            var describe1, describe2, describe3, describe4, describe5, describe6;
+            switch (typeid) {
+                case '@((int)Utility.Enum_Title_Type.首页)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    title2 = $("#txttitle2").val();
+                    if (title2 == "" || title2 == null) {
+                        alertMsg("标题2不能为空");
+                        return;
+                    }
+                    describe2 = $("#txtdescribe2").val();
+                    if (describe2 == "" || describe2 == null) {
+                        alertMsg("描述2不能为空");
+                        return;
+                    }
+                    title3 = $("#txttitle3").val();
+                    if (title3 == "" || title3 == null) {
+                        alertMsg("标题3不能为空");
+                        return;
+                    }
+                    describe3 = $("#txtdescribe3").val();
+                    if (describe3 == "" || describe3 == null) {
+                        alertMsg("描述3不能为空");
+                        return;
+                    }
+                    title4 = $("#txttitle4").val();
+                    if (title4 == "" || title4 == null) {
+                        alertMsg("标题4不能为空");
+                        return;
+                    }
+                    describe4 = $("#txtdescribe4").val();
+                    if (describe4 == "" || describe4 == null) {
+                        alertMsg("描述4不能为空");
+                        return;
+                    }
+                    title5 = $("#txttitle5").val();
+                    if (title5 == "" || title5 == null) {
+                        alertMsg("标题5不能为空");
+                        return;
+                    }
+                    describe5 = $("#txtdescribe5").val();
+                    if (describe5 == "" || describe5 == null) {
+                        alertMsg("描述5不能为空");
+                        return;
+                    }
+                    title6 = $("#txttitle6").val();
+                    if (title6 == "" || title6 == null) {
+                        alertMsg("标题6不能为空");
+                        return;
+                    }
+                    describe6 = $("#txtdescribe6").val();
+                    if (describe6 == "" || describe6 == null) {
+                        alertMsg("描述6不能为空");
+                        return;
+                    }
+                    break;
+                case '@((int)Utility.Enum_Title_Type.服务领域)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    title2 = $("#txttitle2").val();
+                    if (title2 == "" || title2 == null) {
+                        alertMsg("标题2不能为空");
+                        return;
+                    }
+                    describe2 = $("#txtdescribe2").val();
+                    if (describe2 == "" || describe2 == null) {
+                        alertMsg("描述2不能为空");
+                        return;
+                    }
+                    title3 = $("#txttitle3").val();
+                    if (title3 == "" || title3 == null) {
+                        alertMsg("标题3不能为空");
+                        return;
+                    }
+                    describe3 = $("#txtdescribe3").val();
+                    if (describe3 == "" || describe3 == null) {
+                        alertMsg("描述3不能为空");
+                        return;
+                    }
+                    break;
+                case '@((int)Utility.Enum_Title_Type.关于我们)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    title2 = $("#txttitle2").val();
+                    if (title2 == "" || title2 == null) {
+                        alertMsg("标题2不能为空");
+                        return;
+                    }
+                    describe2 = $("#txtdescribe2").val();
+                    if (describe2 == "" || describe2 == null) {
+                        alertMsg("描述2不能为空");
+                        return;
+                    }
+                    title3 = $("#txttitle3").val();
+                    if (title3 == "" || title3 == null) {
+                        alertMsg("标题3不能为空");
+                        return;
+                    }
+                    describe3 = $("#txtdescribe3").val();
+                    if (describe3 == "" || describe3 == null) {
+                        alertMsg("描述3不能为空");
+                        return;
+                    }
+                    break;
+                case '@((int)Utility.Enum_Title_Type.项目案例)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    break;
+                case '@((int)Utility.Enum_Title_Type.项目定价)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    break;
+                case '@((int)Utility.Enum_Title_Type.联系我们)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    break;
+                case '@((int)Utility.Enum_Title_Type.官方博客)':
+                    title1 = $("#txttitle1").val();
+                    if (title1 == "" || title1 == null) {
+                        alertMsg("标题1不能为空");
+                        return;
+                    }
+                    describe1 = $("#txtdescribe1").val();
+                    if (describe1 == "" || describe1 == null) {
+                        alertMsg("描述1不能为空");
+                        return;
+                    }
+                    break;
+            }
+
+
+            var pams = {
+                id: '@title.titleID',
+                title1: title1,
+                title2: title2,
+                title3: title3,
+                title4: title4,
+                title5: title5,
+                title6: title6,
+                describe1: describe1,
+                describe2: describe2,
+                describe3: describe3,
+                describe4: describe4,
+                describe5: describe5,
+                describe6: describe6
+            };
+
+
+            $.post("TitleEdit", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'Title';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+
+        }
+    </script>
+}
+

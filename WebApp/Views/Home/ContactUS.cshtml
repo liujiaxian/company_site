@@ -1,0 +1,198 @@
+﻿@{
+    ViewBag.Title = "联系我们";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@{Model.guanwang_title titlemodel = ViewData["model"] as Model.guanwang_title;}
+<section id="contact-info">
+    <div class="center">
+        <h2>@titlemodel.title1</h2>
+        <p class="lead">@titlemodel.describe1</p>
+    </div>
+    <div class="gmap-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <div class="gmap">
+                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/baidumap.html"></iframe>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 map-content">
+                    <ul class="row">
+                        @{List<Model.guanwang_user> list = ViewData["list"] as List<Model.guanwang_user>;}
+                        <li class="col-sm-6">
+                            @foreach (var item in list)
+                            {
+                                if (list.IndexOf(item) < 2)
+                                {
+                                <address>
+                                    <h5>@item.realName</h5>
+                                    <p>@item.address <br>
+                                    @item.area</p>
+                                    <p>电话:@item.phone <br>
+                                    邮箱地址:@item.userEmail</p>
+                                </address>
+                                }                            
+                            
+                            }
+                        </li>
+
+                          <li class="col-sm-6">
+                            @foreach (var item in list)
+                            {
+                                if (list.IndexOf(item) >= 2)
+                                {
+                                <address>
+                                    <h5>@item.realName</h5>
+                                    <p>@item.address <br>
+                                    @item.area</p>
+                                    <p>电话:@item.phone <br>
+                                    邮箱地址:@item.userEmail</p>
+                                </address>
+                                }                            
+                            
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/gmap_area -->
+
+<section id="contact-page">
+    <div class="container">
+        <div class="center">
+            <h2>@titlemodel.title2</h2>
+            <p class="lead">@titlemodel.describe2</p>
+        </div>
+        <div class="row contact-wrap">
+            <div class="status alert alert-success" style="display: none"></div>
+            <div id="main-contact-form" class="contact-form" name="contact-form">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <div class="form-group">
+                        <label>姓名 *</label>
+                        <input type="text" id="txtname" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>邮箱 *</label>
+                        <input type="email" id="txtemail" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>电话</label>
+                        <input type="number" class="form-control" id="txtphone">
+                    </div>
+                    <div class="form-group">
+                        <label>公司名称</label>
+                        <input type="text" class="form-control" id="txtcompany">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>主题 *</label>
+                        <input type="text" id="txtsubject" class="form-control" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>内容 *</label>
+                        <textarea id="txtmessage" required="required" class="form-control" rows="8"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg" required="required" onclick="btn_feedback()" id="txtsubmit">提交信息</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#contact-page-->
+ <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="color:red;padding:10px;">
+                
+            </div>
+        </div>
+    </div>
+@section footer{
+    <script type="text/javascript">
+        //错误信息提示
+        function alertMsg(msg) {
+            $(".modal-content").text(msg);
+            $(".modal").modal("show");
+            setTimeout(function () {
+                $(".modal").modal("hide")
+            }, 2000);
+        }
+
+        //提交数据
+        function btn_feedback() {
+            var name = $("#txtname").val();
+            if (name==""||name==null) {
+                alertMsg("姓名不能为空！");
+                return;
+            }
+
+            var email = $("#txtemail").val();
+            if (email == "" || email == null) {
+                alertMsg("邮箱不能为空！");
+                return;
+            }
+            if (!CheckMail(email)) {
+                alertMsg("邮箱格式不正确！");
+                return;
+            }
+            var phone = $("#txtphone").val();
+
+            var company = $("#txtcompany").val();
+
+            var subject = $("#txtsubject").val();
+            if (subject == "" || subject == null) {
+                alertMsg("主题不能为空！");
+                return;
+            }
+
+            var message = $("#txtmessage").val();
+            if (message == "" || message == null) {
+                alertMsg("信息不能为空！");
+                return;
+            }
+            if (message.trim().length>250) {
+                alertMsg("信息长度不能大于250个字符！");
+                return;
+            }
+
+            var pams = {
+                name: name,
+                email: email,
+                phone: phone,
+                company: company,
+                subject: subject,
+                message: message
+            };
+
+            $("#txtsubmit").text("信息提交中...").attr("disabled",true);
+            $.post("ContactUS", pams, function (serverData) {
+                $("#txtsubmit").text("提交信息").attr("disabled", false);
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    $("input").val('');
+                    $("textarea").val('');
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //检验邮箱
+        function CheckMail(mail) {
+            var filter = /^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (filter.test(mail)) return true;
+            else {
+                return false;
+            }
+        }
+    </script>
+}

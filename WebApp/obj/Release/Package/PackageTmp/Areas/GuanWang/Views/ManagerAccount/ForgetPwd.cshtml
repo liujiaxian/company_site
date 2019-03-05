@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "忘记密码";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutAccountManager.cshtml";
+}
+
+<div class="form-signin">
+    <h2 class="form-signin-heading">忘记密码</h2>
+    <input type="text" id="txtusername" class="input-block-level" placeholder="账号">
+    <input type="text" id="txtuseremail" class="input-block-level" placeholder="邮箱">
+    <input type="text" id="txtverify" class="input-medium" placeholder="验证码">
+    <img src="/GuanWang/ManagerAccount/Vcode" onclick="this.src = '/GuanWang/ManagerAccount/Vcode?id='+Math.random()" title="看不清？点击切换." /><br />   
+    <p>
+        <button class="btn btn-large btn-primary" onclick="btn_forgetpwd()">确定找回</button>
+    </p>
+
+    <a href="Login">登录系统</a>
+</div>
+
+@section footer{
+    <script type="text/javascript">
+        //找回密码
+        function btn_forgetpwd() {
+            var username = $("#txtusername").val();
+            if (username == "" || username == null) {
+                alertMsg("账号不能为空！");
+                return;
+            }
+            var email = $("#txtuseremail").val();
+            if (email == "" || email == null) {
+                alertMsg("邮箱不能为空！");
+                return;
+            }
+
+            if (!CheckMail(email)) {
+                $("#txtuseremail").focus();
+                alertMsg("用户邮箱格式不正确！");
+                return;
+            }
+            var verify = $("#txtverify").val();
+            if (verify == "" || verify == null) {
+                alertMsg("验证码不能为空！");
+                return;
+            }
+
+            var pams = {
+                username: username,
+                email: email,
+                verify: verify
+            };
+
+            $.post("/GuanWang/ManagerAccount/ForgetPwd", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = '/GuanWang/ManagerAccount/Login';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+
+        }
+
+        //检验邮箱
+        function CheckMail(mail) {
+            var filter = /^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (filter.test(mail)) return true;
+            else {
+                return false;
+            }
+        }
+    </script>
+}

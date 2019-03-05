@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "登录系统";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutAccountManager.cshtml";
+}
+
+<div class="form-signin">
+    <h2 class="form-signin-heading">登录系统</h2>
+    <input type="text" id="txtusername" class="input-block-level" placeholder="账号">
+    <input type="password" id="txtpassword" class="input-block-level" placeholder="密码">
+    <input type="text" id="txtverify" class="input-medium" placeholder="验证码">
+    <img src="/GuanWang/ManagerAccount/Vcode" onclick="this.src = '/GuanWang/ManagerAccount/Vcode?id='+Math.random()" title="看不清？点击切换." /><br />
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="txtcheck">
+            7天免登录
+        </label>
+    </div>
+    <p>
+        <button class="btn btn-large btn-primary" onclick="btn_login()">登录</button>
+    </p>
+
+    <a href="ForgetPwd">忘记密码</a>
+</div>
+
+
+@section footer{
+    <script type="text/javascript">
+        //登录
+        function btn_login() {
+            var username = $("#txtusername").val();
+            if (username == "" || username == null) {
+                alertMsg("账号不能为空！");
+                return;
+            }
+            var password = $("#txtpassword").val();
+            if (password == "" || password == null) {
+                alertMsg("密码不能为空！");
+                return;
+            }
+            var verify = $("#txtverify").val();
+            if (verify == "" || verify == null) {
+                alertMsg("验证码不能为空！");
+                return;
+            }
+
+            var check = $("#txtcheck").prop("checked");
+
+            var pams = {
+                username: username,
+                password: password,
+                verify: verify,
+                check: check
+            };
+
+            $.post("/GuanWang/ManagerAccount/Login", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = '/GuanWang/ManagerHome/Index';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+    </script>
+}

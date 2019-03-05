@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Pricing";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号id</th>
+            <th>标题</th>
+            <th>价格</th>
+            <th>图片</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_pricing> list = ViewData["list"] as List<Model.guanwang_pricing>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.pricingID</td>
+            <td>@item.title</td>
+            <td>@item.price</td>
+            <td><img src="@item.image" style="width:100px;height:80px;" /></td>
+            <td>@Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/PricingEdit/@item.pricingID">编辑</a>
+            </td>
+        </tr>	
+    }
+</table>
+
+

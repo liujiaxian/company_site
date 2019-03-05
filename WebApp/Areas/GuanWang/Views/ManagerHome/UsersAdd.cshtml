@@ -1,0 +1,231 @@
+﻿@{
+    ViewBag.Title = "UserAdd";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@section header{
+    <link href="~/Areas/GuanWang/Css/tab.css" rel="stylesheet" />
+}
+
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover definewidth m10">
+        <tr>
+            <td width="10%" class="tableleft">登录名称</td>
+            <td>
+                <input type="text" name="username" id="txtusername" placeholder="请输入不小于6个字符的登录名称" /></td>
+        </tr>
+        <tr>
+            <td class="tableleft">登录密码</td>
+            <td>
+                <input type="password" name="password" id="txtuserpwd" placeholder="请输入不小于6个字符的登录密码" /></td>
+        </tr>
+        <tr>
+            <td class="tableleft">用户邮箱</td>
+            <td>
+                <input type="text" name="email" id="txtuseremail" placeholder="此邮箱用于找回密码" /></td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">真实姓名</td>
+            <td>
+                <input type="text" id="txtrealname" placeholder="请输入真实姓名" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">联系电话</td>
+            <td>
+                <input type="text" id="txtphone" placeholder="请输入联系电话" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">职位</td>
+            <td>
+                <input type="text" id="txtposition" placeholder="请输入职位" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">标签</td>
+            <td>
+                <div class="demo">
+                    <div class="plus-tag tagbtn clearfix" id="myTags"></div>
+                    <div class="plus-tag-add">
+                        <div class="login">
+                            <ul class="Form FancyForm">
+                                <li>
+                                    <input id="txtblogtag" type="text" class="stext" maxlength="20" style="height: 42px;" placeholder="" />
+                                    <label>输入技能标签</label>
+                                    <span class="fff"></span>
+                                </li>
+                                <li>
+                                    <button type="button" class="Button RedButton Button18" style="font-size: 14px;">添加标签</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">介绍</td>
+            <td>
+                <textarea id="txtdescribe" placeholder="请输入个人介绍" style="height: 200px; width: 600px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">头像</td>
+            <td>
+                <img src="" style="width: 200px; height: 150px; margin-bottom: 10px;" id="txtimagesrc" /><br />
+                <input type="hidden" value="" id="txtimagevalue" />
+                <button class="btn btn-primary" onclick="doUpload('user')">上传图片</button>&nbsp;&nbsp;推荐尺寸145 x 137
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">所在省市</td>
+            <td>
+                <textarea id="txtaddress" placeholder="请输入您的所在的省市" style="height: 50px; width: 600px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">所在区域</td>
+            <td>
+                <textarea id="txtarea" placeholder="请输入您的所在区或街道号" style="height: 50px; width: 600px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">facebook</td>
+            <td>
+                <textarea id="txtfacebook" placeholder="请输入您的facebook地址" style="height: 50px; width: 600px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">twitter</td>
+            <td>
+                <textarea id="txttwitter" placeholder="请输入您的twitter地址" style="height: 50px; width: 600px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">google+</td>
+            <td>
+                <textarea id="txtgoogleplus" placeholder="请输入您的googleplus地址" style="height: 50px; width: 600px;"></textarea>
+            </td>
+        </tr>
+         <tr>
+            <td width="10%" class="tableleft">个人网站</td>
+            <td>
+                <textarea id="txtuserweb" placeholder="请输入您的个人网站地址" style="height: 50px; width: 600px;"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script src="~/Areas/GuanWang/Js/jquery.upload.js"></script>
+    <script src="~/Areas/GuanWang/Js/imageupload.js"></script>
+    <script src="~/Areas/GuanWang/Js/tab.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "User";
+            });
+        });
+
+
+        //提交表单
+        function btn_save() {
+            var name = $("#txtusername").val();
+            if (name == "" || name == null) {
+                $("#txtusername").focus();
+                alertMsg("登录名称不能为空！");
+                return;
+            }
+            if (name.trim().length < 6) {
+                $("#txtusername").focus();
+                alertMsg("登录名称不能小于6个字符！");
+                return;
+            }
+
+            var pwd = $("#txtuserpwd").val();
+            if (pwd == "" || pwd == null) {
+                $("#txtuserpwd").focus();
+                alertMsg("登录密码不能为空！");
+                return;
+            }
+            if (pwd.trim().length < 6) {
+                $("#txtuserpwd").focus();
+                alertMsg("登录密码不能小于6个字符！");
+                return;
+            }
+
+            var email = $("#txtuseremail").val();
+            if (email == "" || email == null) {
+                $("#txtuseremail").focus();
+                alertMsg("用户邮箱不能为空！");
+                return;
+            }
+
+            if (!CheckMail(email)) {
+                $("#txtuseremail").focus();
+                alertMsg("用户邮箱格式不正确！");
+                return;
+            }
+
+            var realname = $("#txtrealname").val();
+            var phone = $("#txtphone").val();
+            var position = $("#txtposition").val();
+            var tags = encodeURIComponent(getTips());
+            var imagevalue = $("#txtimagevalue").val();
+            var describe = $("#txtdescribe").val();
+            var address = $("#txtaddress").val();
+            var area = $("#txtarea").val();
+
+            var facebook = $("#txtfacebook").val();
+            var twitter = $("#txttwitter").val(); 
+            var googleplus = $("#txtgoogleplus").val();
+            var userweb = encodeURIComponent($("#txtuserweb").val());
+
+            var pams = {
+                name: name,
+                pwd: pwd,
+                email: email,
+                realname: realname,
+                phone: phone,
+                position: position,
+                tags: tags,
+                imagevalue: imagevalue,
+                describe: describe,
+                address: address,
+                area: area,
+                facebook: facebook,
+                twitter: twitter,
+                googleplus: googleplus,
+                userweb: userweb
+            };
+
+            $.post("UsersAdd", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'Users';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //检验邮箱
+        function CheckMail(mail) {
+            var filter = /^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (filter.test(mail)) return true;
+            else {
+                return false;
+            }
+        }
+    </script>
+}

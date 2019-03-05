@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "项目定价";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@{Model.guanwang_title titlemodel = ViewData["model"] as Model.guanwang_title;}
+<section class="pricing-page">
+    <div class="container">
+        <div class="center" style="margin-top: 40px;">
+            <h2>@titlemodel.title1</h2>
+            <p class="lead">@titlemodel.describe1</p>
+        </div>
+        <div class="pricing-area text-center">
+            <div class="row">
+                @{List<Model.guanwang_pricing> list = ViewData["list"] as List<Model.guanwang_pricing>;}
+                @foreach (var item in list)
+                {
+                    if (list.IndexOf(item) < 3)
+                    {
+                    <div class="col-sm-4 plan price-@Enum.GetName(typeof(Utility.Enum_Pricing_Color), list.IndexOf(item)) wow fadeInDown">
+                        @if (!string.IsNullOrEmpty(item.image))
+                        {
+                            <img src="@item.image">
+                        }
+                        <ul>
+                            <li class="heading-@Enum.GetName(typeof(Utility.Enum_Pricing_Color), list.IndexOf(item))">
+                                <h1>@item.title</h1>
+                                <span>@item.price</span>
+                            </li>
+                            <li>@item.remark1</li>
+                            <li>@item.remark2</li>
+                            <li>@item.remark3</li>
+                            <li>@item.remark4</li>
+                            <li>@item.remark5</li>
+                            <li class="plan-action">
+                                <a href="" class="btn btn-primary">演示地址</a>
+                            </li>
+                        </ul>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="col-sm-6 col-md-3 plan price-@Enum.GetName(typeof(Utility.Enum_Pricing_Color), list.IndexOf(item)) wow fadeInDown">
+                         @if (!string.IsNullOrEmpty(item.image))
+                        {
+                            <img src="@item.image">
+                        }
+                        <ul>
+                            <li class="heading-@Enum.GetName(typeof(Utility.Enum_Pricing_Color), list.IndexOf(item))">
+                                <h1>@item.title</h1>
+                                <span>@item.price</span>
+                            </li>
+                            <li>@item.remark1</li>
+                            <li>@item.remark2</li>
+                            <li>@item.remark3</li>
+                            <li>@item.remark4</li>
+                            <li>@item.remark5</li>
+                            <li class="plan-action">
+                                <a href="" class="btn btn-primary">演示地址</a>
+                            </li>
+                        </ul>
+                    </div>
+                    }
+                }
+            </div>
+        </div>
+        <!--/pricing-area-->
+    </div>
+    <!--/container-->
+</section>
+<!--/pricing-page-->

@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "TemplateContentAdd";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+@{List<Model.guanwang_template_title> list = ViewData["list"] as List<Model.guanwang_template_title>;}
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover m10">
+        <tr>
+            <td class="tableleft">类型</td>
+            <td>
+                <select name="parentid" id="txttypeid">
+                    @if (list != null)
+                    {
+                        foreach (var item in list)
+                        {
+                        <option value="@item.pID">@item.title</option>
+                        }
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft">高度</td>
+            <td>
+                <input type="text" id="txtheight" /></td>
+        </tr>
+        <tr>
+            <td class="tableleft">图片</td>
+            <td>
+                <img src="" style="width: 200px; height: 150px;margin-bottom:10px;" id="txtimagesrc" /><br />
+                <input type="hidden" value="" id="txtimagevalue" />
+                <button class="btn btn-primary" onclick="doUpload('banner')">上传图片</button>&nbsp;&nbsp;推荐尺寸1169 x 487
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft">html</td>
+            <td>
+                <textarea style="width:100%;height: 400px;" placeholder="请输入html" id="txthtml"></textarea>
+
+            </td>
+        </tr>
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script src="~/Areas/GuanWang/Js/jquery.upload.js"></script>
+    <script src="~/Areas/GuanWang/Js/imageupload.js"></script>
+    <script>
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "TemplateContent";
+            });
+
+        });
+
+        //保存
+        function btn_save() {
+            var height = $("#txtheight").val();
+
+            var imgurl = $("#txtimagevalue").val();
+            if (imgurl == "" || imgurl == null) {
+                alertMsg("请上传图片");
+                return;
+            }
+
+            var html = $("#txthtml").val();
+            if (html == "" || html == null) {
+                $("#txthtml").focus();
+                alertMsg("html不能为空");
+                return;
+            }
+
+            var typeid = $("#txttypeid").val();
+
+            var pams = {
+                height: height,
+                imgurl: imgurl,
+                html: encodeURIComponent(html),
+                typeid: typeid
+            };
+
+
+            $.post("TemplateContentAdd", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'TemplateContent';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+
+        }
+    </script>
+}
+
+

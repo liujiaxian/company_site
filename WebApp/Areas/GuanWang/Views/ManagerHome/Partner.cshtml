@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Partner";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号id</th>
+            <th>名称</th>
+            <th>url</th>
+            <th>图片</th>
+            <th>状态</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_partner> list = ViewData["list"] as List<Model.guanwang_partner>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.partnerID</td>
+            <td>@item.name</td>
+            <td>@item.url</td>
+            <td><img src="@item.image" style="width:100px;height:80px;" /></td>
+            <td>@(item.isShow==true?"显示":"不显示")</td>
+            <td>@Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/PartnerEdit/@item.partnerID">编辑</a>
+                <a href="javascript:;" onclick="btn_update_status(@item.partnerID)">状态</a>
+            </td>
+        </tr>	
+    }
+</table>
+
+@section footer{
+    <script type="text/javascript">
+        //更新状态
+        function btn_update_status(id) {
+            $.post("PartnerStatus", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+    </script>
+}

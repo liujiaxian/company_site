@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "官方博客";
+    Layout = "~/Views/Shared/_LayoutBlogPage.cshtml";
+}
+
+
+@{List<Model.guanwang_vyw_blog_type_user> list = ViewData["list"] as List<Model.guanwang_vyw_blog_type_user>;}
+@if (list != null)
+{
+    foreach (var item in list)
+    {
+    <div class="blog-item">
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 text-center">
+                <div class="entry-meta">
+                    <span id="publish_date">@Convert.ToDateTime(item.addTime).ToChsStr()</span>
+                    <span><i class="fa fa-user"></i><a href="/home/aboutus.shtml" title="发表人"> @item.userName</a></span>
+                    <span><i class="fa fa-tasks"></i><a href="/home/blogsearch.shtml?type=@item.typeID" title="博客类型"> @item.name</a></span>
+                    <span><i class="fa fa-eye"></i><a href="javascript:void(0)" title="浏览量"> @item.likeCount</a></span>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-10 blog-content">
+                @if (!string.IsNullOrEmpty(item.image))
+                {
+                    <a href="/home/blogdetail/@(item.blogID).shtml">
+                        <img class="img-responsive img-blog" src="@item.image" width="100%" alt="" /></a>
+                }
+                <h2><a href="/home/blogdetail/@(item.blogID).shtml">@item.title</a></h2>
+                <h3>@item.describe</h3>
+                <a class="btn btn-primary readmore" href="/home/blogdetail/@(item.blogID).shtml">阅读全文 <i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+                         
+    }
+}
+<div style="text-align:center;">
+    <ul class="pagination pagination-lg">
+        @Html.Raw(MyPageBar.PageSort((int)ViewBag.PageIndex, (int)ViewBag.PageCount, ViewBag.UrlParams))
+    </ul>
+</div>
+<!--/.pagination-->

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="/Areas/GuanWang/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Areas/GuanWang/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/Areas/GuanWang/Css/style.css" />
+    <script type="text/javascript" src="/Areas/GuanWang/Js/jquery.js"></script>
+    <script type="text/javascript" src="/Areas/GuanWang/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="/Areas/GuanWang/Js/ckform.js"></script>
+    <script type="text/javascript" src="/Areas/GuanWang/Js/common.js"></script>
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #1B3160;
+        }
+
+        .form-signin {
+            max-width: 300px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        }
+
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+                margin-bottom: 10px;
+            }
+
+            .form-signin input[type="text"],
+            .form-signin input[type="password"] {
+                font-size: 16px;
+                height: auto;
+                margin-bottom: 15px;
+                padding: 7px 9px;
+            }
+
+            .form-signin img {
+                width: 100px;
+                height: 36px;
+                margin-bottom: 16px;
+                cursor: pointer;
+            }
+    </style>
+    @RenderSection("header",false)
+</head>
+<body>
+        <div class="container">
+          @RenderBody()
+
+        <p style="text-align:center;color:white;">版权所有：捧起网</p>
+    </div>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="color: red; padding: 10px;">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //错误信息提示
+        function alertMsg(msg) {
+            $(".modal-content").text(msg);
+            $(".modal").modal("show");
+            setTimeout(function () {
+                $(".modal").modal("hide")
+            }, 2000);
+        }
+
+    </script>
+     @RenderSection("footer",false)
+</body>
+</html>

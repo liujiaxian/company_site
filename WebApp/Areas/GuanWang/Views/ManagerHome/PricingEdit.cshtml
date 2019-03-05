@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "PricingEdit";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+@{Model.guanwang_pricing edit = ViewData["model"] as Model.guanwang_pricing;}
+
+<div class="definewidth m20">
+    <table class="table table-bordered table-hover definewidth m10">      
+        <tr>
+            <td width="10%" class="tableleft">标题</td>
+            <td>
+                <input type="text" id="txtname" placeholder="请输入标题" value="@edit.title" />
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">价格</td>
+            <td>
+                <input type="text" id="txtprice" placeholder="请输入价格" value="@edit.price" />
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">介绍1</td>
+            <td>
+                <input type="text" id="txtremark1" placeholder="请输入介绍1" value="@edit.remark1" />
+            </td>
+        </tr>
+          <tr>
+            <td width="10%" class="tableleft">介绍2</td>
+            <td>
+                <input type="text" id="txtremark2" placeholder="请输入介绍2" value="@edit.remark2" />
+            </td>
+        </tr>
+          <tr>
+            <td width="10%" class="tableleft">介绍3</td>
+            <td>
+                 <input type="text" id="txtremark3" placeholder="请输入介绍3" value="@edit.remark3" />
+            </td>
+        </tr>
+          <tr>
+            <td width="10%" class="tableleft">介绍4</td>
+            <td>
+                 <input type="text" id="txtremark4" placeholder="请输入介绍4" value="@edit.remark4" />
+            </td>
+        </tr>
+         <tr>
+            <td width="10%" class="tableleft">介绍5</td>
+            <td>
+                <input type="text" id="txtremark5" placeholder="请输入介绍5" value="@edit.remark5" />
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">演示地址</td>
+            <td>
+                <textarea id="txturl" placeholder="请输入演示地址" style="height:100px;">@edit.url</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" class="tableleft">图片</td>
+            <td>
+                <img src="@edit.image" style="width:200px;height:150px;margin-bottom:10px;" id="txtimagesrc" /><br />
+                <input type="hidden" value="" id="txtimagevalue" />
+                <button class="btn btn-primary" onclick="doUpload('pricing')">上传图片</button>&nbsp;&nbsp;推荐尺寸 @(Convert.ToInt32(edit.pricingID)<3?"83 x 83":"67 x 67")
+            </td>
+        </tr>
+
+        <tr>
+            <td class="tableleft"></td>
+            <td>
+                <button class="btn btn-primary" onclick="btn_save()">保存</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" name="backid" id="backid">返回列表</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section footer{
+    <script src="~/Areas/GuanWang/Js/jquery.upload.js"></script>
+    <script src="~/Areas/GuanWang/Js/imageupload.js"></script>
+    <script>
+        $(function () {
+            $('#backid').click(function () {
+                window.location.href = "Pricing";
+            });
+        });
+
+        //提交表单
+        function btn_save() {
+            var name = $("#txtname").val();
+            if (name == "" || name == null) {
+                $("#txtname").focus();
+                alertMsg("标题不能为空！");
+                return;
+            }
+            var price = $("#txtprice").val();
+            if (price == "" || price == null) {
+                $("#txtprice").focus();
+                alertMsg("价格不能为空！");
+                return;
+            }
+            var remark1 = $("#txtremark1").val();
+            if (remark1 == "" || remark1 == null) {
+                $("#txtremark1").focus();
+                alertMsg("介绍1不能为空！");
+                return;
+            }
+            var remark2 = $("#txtremark2").val();
+            if (remark2 == "" || remark2 == null) {
+                $("#txtremark2").focus();
+                alertMsg("介绍2不能为空！");
+                return;
+            }
+            var remark3 = $("#txtremark3").val();
+            if (remark3 == "" || remark3 == null) {
+                $("#txtremark3").focus();
+                alertMsg("介绍3不能为空！");
+                return;
+            }
+            var remark4 = $("#txtremark4").val();
+            if (remark4 == "" || remark4 == null) {
+                $("#txtremark4").focus();
+                alertMsg("介绍4不能为空！");
+                return;
+            }
+            var remark5 = $("#txtremark5").val();
+            if (remark5 == "" || remark5 == null) {
+                $("#txtremark5").focus();
+                alertMsg("介绍5不能为空！");
+                return;
+            }
+            var url = $("#txturl").val();
+           
+            var img = $("#txtimagevalue").val();
+
+            var pams = {
+                id: '@edit.pricingID',
+                name: name,
+                price: price,
+                remark1: remark1,
+                remark2: remark2,
+                remark3: remark3,
+                remark4: remark4,
+                remark5: remark5,
+                url: url,
+                img: img
+            };
+
+            $.post("PricingEdit", pams, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location = 'Pricing';
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+    </script>
+}
+
+
+
+
+

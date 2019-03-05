@@ -1,0 +1,123 @@
+﻿@{Model.guanwang_vyw_blog_type_user blog = ViewData["model"] as Model.guanwang_vyw_blog_type_user;}
+
+@{
+    ViewBag.Title = blog.title;
+    Layout = "~/Views/Shared/_LayoutBlogPage.cshtml";
+}
+
+
+@section blogheader{
+    <meta name="description" content="@blog.describe">
+    <meta name="keywords" content="@Server.UrlDecode(blog.tags)">
+    <link href="/Areas/GuanWang/editormd/css/editormd.preview.css" rel="stylesheet" />
+    <style type="text/css">
+        .editormd-preview-container, .editormd-html-preview {
+            padding: 0px !important;
+        }
+    </style>
+}
+
+<div class="blog-item">
+    <img class="img-responsive img-blog" src="/Content/picture/blog1.jpg" width="100%" alt="" />
+    <div class="row">
+        <div class="col-xs-12 col-sm-2 text-center">
+            <div class="entry-meta">
+                <span id="publish_date">@Convert.ToDateTime(blog.addTime).ToChsStr()</span>
+                <span><i class="fa fa-user"></i><a href="/home/aboutus.shtml" title="发表人">@blog.userName</a></span>
+                <span><i class="fa fa-tasks"></i><a href="/home/blogsearch.shtml?type=@blog.typeID" title="博客类型">@blog.name</a></span>
+                <span><i class="fa fa-eye"></i><a href="javascript:void(0)" title="浏览量">@blog.likeCount</a></span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-10 blog-content">
+            <h2>@blog.title</h2>
+            <p>@blog.describe</p>
+
+            <p id="txtblogcontent">
+                <textarea style="display: none;">@Html.Raw(Server.UrlDecode(blog.content))</textarea>
+            </p>
+
+            <div class="post-tags">
+                <strong>标签:</strong>
+                @if (!string.IsNullOrEmpty(blog.tags))
+                {
+                    string[] str = Server.UrlDecode(blog.tags).Split(',');
+                    for (int i = 0; i < str.Length - 1; i++)
+                    {
+                    <a href="/home/blogsearch.shtml?tags=@str[i]">@str[i]</a>
+                        if (str.Length - 1 != i + 1)
+                        {
+                    @:/
+                    }
+                    }
+                }
+                else
+                {
+                    <span>暂无标签！</span>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--/.blog-item-->
+
+<div class="media reply_section">
+    <div class="pull-left post_reply text-center">
+        <a href="/home/aboutus.shtml">
+            <img src="@blog.userImage" class="img-circle" alt="@blog.realName" /></a>
+        <ul>
+            <li><a href="@blog.facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="@blog.twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="@blog.googlePlus"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+    </div>
+    <div class="media-body post_reply_content">
+        <h3>@blog.realName</h3>
+        <p class="lead">@blog.userDescribe</p>
+        <p><strong>个人站:</strong> <a href="@Server.UrlDecode(blog.userWeb)" target="_blank">@Server.UrlDecode(blog.userWeb)</a></p>
+    </div>
+</div>
+<div style="height: 60px;"></div>
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="@blog.blogID" data-title="@blog.title" data-url="@Request.Url.ToString()" id="scollcomment"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    var duoshuoQuery = { short_name: "pqpqpq" };
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript'; ds.async = true;
+        ds.src = '/Content/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+@section blogfooter{
+    <script src="/Areas/GuanWang/editormd/lib/marked.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/lib/prettify.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/lib/raphael.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/lib/underscore.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/lib/sequence-diagram.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/lib/flowchart.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/lib/jquery.flowchart.min.js"></script>
+    <script src="/Areas/GuanWang/editormd/editormd.min.js"></script>
+    <script type="text/javascript">
+        var testEditor;
+        $(function () {
+            testEditor = editormd.markdownToHTML("txtblogcontent", {
+                htmlDecode: "style,script,iframe",  // you can filter tags decode
+                emoji: true,
+                taskList: true,
+                tex: true,  // 默认不解析
+                flowChart: true,  // 默认不解析
+                sequenceDiagram: true,  // 默认不解析
+                codeFold: true,
+            });
+        });
+
+
+    </script>
+}

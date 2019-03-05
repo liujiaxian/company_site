@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "ProductType";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>编号id</th>
+            <th>类型名称</th>
+            <th>添加时间</th>
+            <th>更新时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_product_type> list = ViewData["list"] as List<Model.guanwang_product_type>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.typeID</td>
+            <td>@item.name</td>
+            <td>@Convert.ToDateTime(item.addTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@Convert.ToDateTime(item.updateTime).ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>
+                <a href="/GuanWang/ManagerHome/ProductTypeEdit/@item.typeID">编辑</a>
+            </td>
+        </tr>	
+    }
+</table>

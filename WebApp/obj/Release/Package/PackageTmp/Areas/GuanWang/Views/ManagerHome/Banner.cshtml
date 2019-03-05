@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "轮播管理";
+    Layout = "~/Areas/GuanWang/Views/Shared/_LayoutPageManager.cshtml";
+}
+
+<div class="form-inline definewidth m20">
+    <button type="button" class="btn btn-success" onclick="btn_add_banner()">新增轮播</button>
+</div>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>标题</th>
+            <th>描述</th>
+            <th>背景图</th>
+            <th>人物图</th>
+            <th>状态</th>
+            <th>管理操作</th>
+        </tr>
+    </thead>
+    @{List<Model.guanwang_banner_index> list = ViewData["list"] as List<Model.guanwang_banner_index>;}
+    @foreach (var item in list)
+    {
+        <tr>
+            <td>@item.bannerTitle</td>
+            <td>@item.bannerDescripe</td>
+            <td><img src="@item.bannerImage" style="height:80px;width:100px;" /></td>
+            <td><img src="@item.peopleImage" style="height:80px;width:100px;" /></td>
+            <td>@(item.isShow==true?"显示":"不显示")</td>
+            <td>
+                   <a href="/GuanWang/ManagerHome/BannerEdit/@item.bannerID">编辑</a>
+                <a href="javascript:;" onclick="btn_update_status(@item.bannerID)">状态</a>
+                <a href="javascript:;" onclick="btn_move_up(@item.bannerID)">上移</a>
+                <a href="javascript:;" onclick="btn_move_down(@item.bannerID)">下移</a>
+                <a href="javascript:;" onclick="btn_delete(@item.bannerID)">删除</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@section footer{
+    <script type="text/javascript">
+        //新增轮播
+        function btn_add_banner() {
+            window.location = "BannerAdd";
+        }
+
+        //更新状态
+        function btn_update_status(id) {
+            $.post("BannerStatus", {id:id}, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status==0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //上移
+        function btn_move_up(id) {
+            $.post("BannerUp", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //下移
+        function btn_move_down(id) {
+            $.post("BannerDown", { id: id }, function (serverData) {
+                var jsondata = $.parseJSON(serverData);
+                if (jsondata.status == 0) {
+                    alertMsg(jsondata.msg);
+                    window.location.reload();
+                } else {
+                    alertMsg(jsondata.msg);
+                }
+            });
+        }
+
+        //删除
+        function btn_delete(id) {
+            if (confirm("确定删除吗？")) {
+                $.post("BannerDelete", { id: id }, function (serverData) {
+                    var jsondata = $.parseJSON(serverData);
+                    if (jsondata.status == 0) {
+                        alertMsg(jsondata.msg);
+                        window.location.reload();
+                    } else {
+                        alertMsg(jsondata.msg);
+                    }
+                });
+            }
+        }
+    </script>
+}

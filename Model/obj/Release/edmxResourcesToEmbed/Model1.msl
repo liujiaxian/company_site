@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="qds11527190_dbModelStoreContainer" CdmEntityContainer="qds11527190_dbEntities">
+    <EntitySetMapping Name="guanwang_banner_about">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_banner_about">
+        <MappingFragment StoreEntitySet="guanwang_banner_about">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="isShow" ColumnName="isShow" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="bannerID" ColumnName="bannerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_banner_index">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_banner_index">
+        <MappingFragment StoreEntitySet="guanwang_banner_index">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="isShow" ColumnName="isShow" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="peopleImage" ColumnName="peopleImage" />
+          <ScalarProperty Name="bannerImage" ColumnName="bannerImage" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="bannerDescripe" ColumnName="bannerDescripe" />
+          <ScalarProperty Name="bannerTitle" ColumnName="bannerTitle" />
+          <ScalarProperty Name="bannerID" ColumnName="bannerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_blog">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_blog">
+        <MappingFragment StoreEntitySet="guanwang_blog">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="likeCount" ColumnName="likeCount" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="blogID" ColumnName="blogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_blog_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_blog_type">
+        <MappingFragment StoreEntitySet="guanwang_blog_type">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_case">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_case">
+        <MappingFragment StoreEntitySet="guanwang_case">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="caseID" ColumnName="caseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_case_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_case_type">
+        <MappingFragment StoreEntitySet="guanwang_case_type">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_evaluation">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_evaluation">
+        <MappingFragment StoreEntitySet="guanwang_evaluation">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="isRecommend" ColumnName="isRecommend" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="evaluationID" ColumnName="evaluationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_feedback">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_feedback">
+        <MappingFragment StoreEntitySet="guanwang_feedback">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="feedbackID" ColumnName="feedbackID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_footer">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_footer">
+        <MappingFragment StoreEntitySet="guanwang_footer">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="isShow" ColumnName="isShow" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="footerID" ColumnName="footerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_good">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_good">
+        <MappingFragment StoreEntitySet="guanwang_good">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="goodID" ColumnName="goodID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_hot">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_hot">
+        <MappingFragment StoreEntitySet="guanwang_hot">
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="ipAddress" ColumnName="ipAddress" />
+          <ScalarProperty Name="blogID" ColumnName="blogID" />
+          <ScalarProperty Name="hotID" ColumnName="hotID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_like">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_like">
+        <MappingFragment StoreEntitySet="guanwang_like">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="navTitle" ColumnName="navTitle" />
+          <ScalarProperty Name="likeID" ColumnName="likeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_partner">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_partner">
+        <MappingFragment StoreEntitySet="guanwang_partner">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="isShow" ColumnName="isShow" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="partnerID" ColumnName="partnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_pricing">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_pricing">
+        <MappingFragment StoreEntitySet="guanwang_pricing">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="remark5" ColumnName="remark5" />
+          <ScalarProperty Name="remark4" ColumnName="remark4" />
+          <ScalarProperty Name="remark3" ColumnName="remark3" />
+          <ScalarProperty Name="remark2" ColumnName="remark2" />
+          <ScalarProperty Name="remark1" ColumnName="remark1" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="pricingID" ColumnName="pricingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_product">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_product">
+        <MappingFragment StoreEntitySet="guanwang_product">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_product_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_product_type">
+        <MappingFragment StoreEntitySet="guanwang_product_type">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_service">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_service">
+        <MappingFragment StoreEntitySet="guanwang_service">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="iconClass" ColumnName="iconClass" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_skill">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_skill">
+        <MappingFragment StoreEntitySet="guanwang_skill">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="colorClass" ColumnName="colorClass" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="percent" ColumnName="percent" />
+          <ScalarProperty Name="skillID" ColumnName="skillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_template">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_template">
+        <MappingFragment StoreEntitySet="guanwang_template">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="html" ColumnName="html" />
+          <ScalarProperty Name="pID" ColumnName="pID" />
+          <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="templateID" ColumnName="templateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_template_title">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_template_title">
+        <MappingFragment StoreEntitySet="guanwang_template_title">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="pID" ColumnName="pID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_title">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_title">
+        <MappingFragment StoreEntitySet="guanwang_title">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="describe6" ColumnName="describe6" />
+          <ScalarProperty Name="title6" ColumnName="title6" />
+          <ScalarProperty Name="describe5" ColumnName="describe5" />
+          <ScalarProperty Name="title5" ColumnName="title5" />
+          <ScalarProperty Name="describe4" ColumnName="describe4" />
+          <ScalarProperty Name="title4" ColumnName="title4" />
+          <ScalarProperty Name="describe3" ColumnName="describe3" />
+          <ScalarProperty Name="title3" ColumnName="title3" />
+          <ScalarProperty Name="describe2" ColumnName="describe2" />
+          <ScalarProperty Name="title2" ColumnName="title2" />
+          <ScalarProperty Name="describe1" ColumnName="describe1" />
+          <ScalarProperty Name="title1" ColumnName="title1" />
+          <ScalarProperty Name="titleID" ColumnName="titleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_user">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_user">
+        <MappingFragment StoreEntitySet="guanwang_user">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="loginTime" ColumnName="loginTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="googlePlus" ColumnName="googlePlus" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="userWeb" ColumnName="userWeb" />
+          <ScalarProperty Name="userImage" ColumnName="userImage" />
+          <ScalarProperty Name="userDescribe" ColumnName="userDescribe" />
+          <ScalarProperty Name="userTags" ColumnName="userTags" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="realName" ColumnName="realName" />
+          <ScalarProperty Name="userStatus" ColumnName="userStatus" />
+          <ScalarProperty Name="userRole" ColumnName="userRole" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_web">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_web">
+        <MappingFragment StoreEntitySet="guanwang_web">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="websiteID" ColumnName="websiteID" />
+          <ScalarProperty Name="template" ColumnName="template" />
+          <ScalarProperty Name="webName" ColumnName="webName" />
+          <ScalarProperty Name="webID" ColumnName="webID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_web_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_web_type">
+        <MappingFragment StoreEntitySet="guanwang_web_type">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_website">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_website">
+        <MappingFragment StoreEntitySet="guanwang_website">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="websiteID" ColumnName="websiteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_vyw_blog_type_user">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_blog_type_user">
+        <MappingFragment StoreEntitySet="guanwang_vyw_blog_type_user">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="googlePlus" ColumnName="googlePlus" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="userWeb" ColumnName="userWeb" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="userDescribe" ColumnName="userDescribe" />
+          <ScalarProperty Name="userImage" ColumnName="userImage" />
+          <ScalarProperty Name="userTags" ColumnName="userTags" />
+          <ScalarProperty Name="realName" ColumnName="realName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="likeCount" ColumnName="likeCount" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="blogID" ColumnName="blogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_vyw_case_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_case_type">
+        <MappingFragment StoreEntitySet="guanwang_vyw_case_type">
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="googlePlus" ColumnName="googlePlus" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="userImage" ColumnName="userImage" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="userWeb" ColumnName="userWeb" />
+          <ScalarProperty Name="userDescribe" ColumnName="userDescribe" />
+          <ScalarProperty Name="userTags" ColumnName="userTags" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="realName" ColumnName="realName" />
+          <ScalarProperty Name="userStatus" ColumnName="userStatus" />
+          <ScalarProperty Name="userRole" ColumnName="userRole" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="caseID" ColumnName="caseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_vyw_product_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_product_type">
+        <MappingFragment StoreEntitySet="guanwang_vyw_product_type">
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_vyw_template_title">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_template_title">
+        <MappingFragment StoreEntitySet="guanwang_vyw_template_title">
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="pID" ColumnName="pID" />
+          <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="templateID" ColumnName="templateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guanwang_vyw_web_type">
+      <EntityTypeMapping TypeName="qds11527190_dbModel.guanwang_vyw_web_type">
+        <MappingFragment StoreEntitySet="guanwang_vyw_web_type">
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="websiteID" ColumnName="websiteID" />
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="addTime" ColumnName="addTime" />
+          <ScalarProperty Name="typeID" ColumnName="typeID" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
